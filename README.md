@@ -18,3 +18,17 @@ The graph above show the accuracy. The accuracy of the training set is 93.8 perc
 
 <img src="https://user-images.githubusercontent.com/94357278/232262134-4da79b2d-1233-4457-b6f4-dd433d81c4ef.jpg" alt="loss" width="500" height="300">
 The graph above show the loss value. The loss value of the training set is 0.1895 percent, and 0.2686 percent for the evaluation set.
+
+# Generated Music Samples
+
+https://user-images.githubusercontent.com/94357278/232325485-83642232-7d7d-40e2-a5bf-681c7fd35bdf.mov
+
+Sample 1
+
+https://user-images.githubusercontent.com/94357278/232325495-6156a4c2-85a7-46ce-becd-d6ddf217b530.mov
+
+Sample 2
+
+https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-a9b5-6a809296ea6c.mov
+
+Sample 3
