@@ -13,8 +13,8 @@ The blue line is the training set.
 The orange line is the evaluation set.
 
 <img src="https://user-images.githubusercontent.com/94357278/232262180-f10d816a-c7d3-4641-8e21-44646ed0f853.jpg" alt="metrics_accuracy" width="500" height="300">
-The graph above show the accuracy. The accuracy of the training set is 93.8 percent, and 93.2 percent for the evaluation set. 
+The graph above show the accuracy. The accuracy of the training set is 93.8 percent, and 93.2 percent for the evaluation set.   
 
 
 <img src="https://user-images.githubusercontent.com/94357278/232262134-4da79b2d-1233-4457-b6f4-dd433d81c4ef.jpg" alt="loss" width="500" height="300">
-The graph above show the loss value. The accuracy of the training set is 0.1895 percent, and 0.2686 percent for the evaluation set.
+The graph above show the loss value. The loss value of the training set is 0.1895 percent, and 0.2686 percent for the evaluation set.
