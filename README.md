@@ -7,4 +7,4 @@ The model was fed with 240 classical music scores in MusicXML file formats. All 
 I trained the model for 40k checkpoint. 
 Here's the result:
 
-
+![loss](https://user-images.githubusercontent.com/94357278/232262134-4da79b2d-1233-4457-b6f4-dd433d81c4ef.jpg)
