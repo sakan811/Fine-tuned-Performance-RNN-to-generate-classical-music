@@ -19,6 +19,9 @@ The graph above show the accuracy. The accuracy of the training set is 93.8 perc
 The graph above show the loss value. The loss value of the training set is 0.1895 percent, and 0.2686 percent for the evaluation set.
 
 # Generated Music Samples
+The generated samples were generated using these settings:
+temperature=1 
+num_steps=6000
 
 https://user-images.githubusercontent.com/94357278/232325485-83642232-7d7d-40e2-a5bf-681c7fd35bdf.mov
 
