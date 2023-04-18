@@ -32,3 +32,7 @@ Sample 2
 https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-a9b5-6a809296ea6c.mov
 
 Sample 3
+
+# Further Use
+
+I've uploaded the .mag file for the fine-tuned model, so it can be used further.
