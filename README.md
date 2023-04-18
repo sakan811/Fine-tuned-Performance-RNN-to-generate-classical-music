@@ -6,7 +6,8 @@ The model was fed with 240 classical music scores in MusicXML file formats. All 
 
 # Result
 I trained the model for 40k checkpoint.   
-The dataset was divided into 2 datasets, training and evaluation, with ratio of 90:10. Batch size of 48 was used, with drop rate of 50 percent.  
+The dataset was divided into 2 datasets, training and evaluation, with ratio of 90:10. Batch size of 48 was used, with drop rate of 50 percent.    
+
 The blue line is the training set.  
 The orange line is the evaluation set.  
 
@@ -34,4 +35,7 @@ Sample 3
 # Further Use
 
 I've uploaded the .mag file for the fine-tuned model, so it can be used further.   
-https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/classical_fine-tuned_performance_rnn.mag
+https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/classical_fine-tuned_performance_rnn.mag   
+
+You can look at this page for the tutorial on how to use the Performance RNN   
+https://github.com/magenta/magenta/tree/main/magenta/models/performance_rnn
