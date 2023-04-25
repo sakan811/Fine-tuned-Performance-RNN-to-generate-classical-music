@@ -1,17 +1,23 @@
 # Fine-tuning-Performance-RNN-to-generate-classical-music
 
-This is my research project for one of the modules I'm taking for my Master degree.  
+This is my research project for one of the modules I'm taking for my Master degree.     
+I might continue training the model further or with different hyperparameters, even though the module ends.
+
 My goal is to fine-tune the Performance RNN, a model from Magenta project, to generate legit classical music.   
+
 The model was fed with 240 classical music scores in MusicXML file formats. All of them are public domain.    
-The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.
+The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.   
+
+Only the model trained with 48 batch size and 50 percent drop rate is a part of my research project, other version of the trained models aren't.   
 
 # Result of different hyperparameters
 I decide to train the model with different hyperparameters to compare the outcomes.   
-All of the models was trained until 40k checkpoint.
+All of the models was trained until 40k checkpoint.   
 The dataset was divided into 2 datasets, training and evaluation, with ratio of 90:10.
 
 # Result (48 batch size)
-Batch size of 48 was used, with drop rate of 50 percent.    
+This version of fine-tuned Performance is a part of my research project.    
+Batch size of 48 was used, with drop rate of 50 percent    .    
 
 The blue line is the training set.  
 The orange line is the evaluation set.  
@@ -72,6 +78,7 @@ Sample 3
 # Further Use
 
 I've uploaded the .mag file of the fine-tuned model, so it can be used further.   
+48 batch size:   
 https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/classical_fine-tuned_performance_rnn.mag   
 
 You can look at this page for the tutorial on how to use the Performance RNN   
