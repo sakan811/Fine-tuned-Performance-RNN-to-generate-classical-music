@@ -79,7 +79,9 @@ Sample 3
 
 I've uploaded the .mag file of the fine-tuned model, so it can be used further.   
 48 batch size:   
-https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/classical_fine-tuned_performance_rnn.mag   
+https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/classical_fine-tuned_performance_rnn.mag       
+32 batch size:    
+https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/32_classical_fine-tuned_performance_rnn.mag    
 
 You can look at this page for the tutorial on how to use the Performance RNN   
 https://github.com/magenta/magenta/tree/main/magenta/models/performance_rnn
