@@ -12,12 +12,12 @@ Only the model trained with 48 batch size and 50 percent drop rate is a part of 
 
 # Result of different hyperparameters
 I decide to train the model with different hyperparameters to compare the outcomes.   
-All of the models was trained until 40k checkpoint.   
 The dataset was divided into 2 datasets, training and evaluation, with ratio of 90:10.
 
 # Result (48 batch size)
 This version of fine-tuned Performance is a part of my research project.    
-Batch size of 48 was used, with drop rate of 50 percent    .    
+Batch size of 48 was used, with drop rate of 50 percent.        
+The model was trained until 40k checkpoint.         
 
 The blue line is the training set.  
 The orange line is the evaluation set.  
