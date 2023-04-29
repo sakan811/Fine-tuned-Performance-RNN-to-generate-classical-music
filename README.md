@@ -62,28 +62,28 @@ Sample 3
 The **blue line** is the **training set**.     
 The **orange line** is the **evaluation set**.     
 
-<img src="https://user-images.githubusercontent.com/94357278/234107533-47c10fc4-08c0-47d4-a38a-312d95b4a3dd.jpg" alt="loss" width="500" height="300">      
+<img src="https://user-images.githubusercontent.com/94357278/235319112-7df55082-a3d6-45f0-b24d-e847f2404e8a.jpg" alt="loss" width="500" height="300">      
 
-The graph above show the accuracy. The **accuracy** of the **training set** is **96.3 percent**, and **89.1 percent** for **the evaluation set**.   
+The graph above show the accuracy. The **accuracy** of the **training set** is **94.1 percent**, and **90.2 percent** for **the evaluation set**.   
 
-<img src="https://user-images.githubusercontent.com/94357278/234107514-04ae8c65-ae8e-4d43-89fe-f8cb01a60487.jpg" alt="loss" width="500" height="300">
+<img src="https://user-images.githubusercontent.com/94357278/235319121-dc76dc74-2362-4afa-8314-444faa3a8204.jpg" alt="loss" width="500" height="300">
 
-The graph above show the loss value. The **loss value** of the **training set** is **0.1242**, and **0.5902** for **the evaluation set**.
+The graph above show the loss value. The **loss value** of the **training set** is **0.1753**, and **0.5331** for **the evaluation set**.
 
 ## Generated Music Samples (32 batch size)
 The generated samples were generated using these settings:   
 temperature=1    
 num_steps=6000   
 
-https://user-images.githubusercontent.com/94357278/234112926-98e530b5-238a-4403-a769-c49aa7eb34cf.mov   
+https://user-images.githubusercontent.com/94357278/235319863-e0925ac5-300b-4898-acd0-81cc529801c4.mov
 
 Sample 1   
 
-https://user-images.githubusercontent.com/94357278/234112936-463f1229-74ce-4cc1-9af8-db6629255d15.mov   
+https://user-images.githubusercontent.com/94357278/235319870-cf374cb3-da5d-40e0-9152-d13affda449e.mov
 
 Sample 2   
 
-https://user-images.githubusercontent.com/94357278/234112949-1abe61fd-14db-49a0-8d5f-57673a1ee1ee.mov   
+https://user-images.githubusercontent.com/94357278/235319878-5f178b83-8bce-4465-b1fd-d3505dc5d56d.mov
 
 Sample 3   
 
