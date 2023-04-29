@@ -1,4 +1,4 @@
-# Fine-tuning-Performance-RNN-to-generate-classical-music
+# Fine-tuning Performance RNN to Generate Classical Music
 
 This is my research project for one of the modules I'm taking for my Master degree.     
 I might continue training the model further or with different hyperparameters, even though the module ends.
@@ -8,28 +8,38 @@ My goal is to fine-tune the Performance RNN, a model from Magenta project, to ge
 The model was fed with 240 classical music scores in MusicXML file formats. All of them are public domain.    
 The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.   
 
-Only the model trained with 48 batch size and 50 percent drop rate is a part of my research project, other version of the trained models aren't.   
+Only the model trained with 48 batch size and 50 percent drop rate is a part of my research project, other version of the trained models aren't.     
 
-# Result of different hyperparameters
+## Table of Contents
+- [Result of different hyperparameters](#result-of-different-hyperparameters)
+- [Result (48 batch size)](#result-48-batch-size)
+- [Generated Music Samples (48 batch size)](#generated-music-samples-48-batch-size)
+- [Result (32 batch size)](#result-32-batch-size)
+- [Generated Music Samples (32 batch size)](#generated-music-samples-32-batch-size)
+- [Further Use](#further-use)
+
+## Result of different hyperparameters
 I decide to train the model with different hyperparameters to compare the outcomes.   
-All of the models was trained until 40k checkpoint.   
 The dataset was divided into 2 datasets, training and evaluation, with ratio of 90:10.
 
-# Result (48 batch size)
+## Result (48 batch size)
 This version of fine-tuned Performance is a part of my research project.    
-Batch size of 48 was used, with drop rate of 50 percent    .    
+**Batch size of 48** was used, with **drop rate** of **50 percent**.        
+The model was trained until 40k checkpoint.            
 
-The blue line is the training set.  
-The orange line is the evaluation set.  
-
+The **blue line** is the **training set**.   
+The **orange line** is the **evaluation set**.   
+ 
 <img src="https://user-images.githubusercontent.com/94357278/232262180-f10d816a-c7d3-4641-8e21-44646ed0f853.jpg" alt="metrics_accuracy" width="500" height="300">
-The graph above show the accuracy. The accuracy of the training set is 93.8 percent, and 93.2 percent for the evaluation set.   
+
+The graph above show the accuracy. The **accuracy** of the **training set** is **93.8 percent**, and **93.2 percent** for the **evaluation set**.   
 
 
 <img src="https://user-images.githubusercontent.com/94357278/232262134-4da79b2d-1233-4457-b6f4-dd433d81c4ef.jpg" alt="loss" width="500" height="300">
-The graph above show the loss value. The loss value of the training set is 0.1895, and 0.2686 for the evaluation set.
 
-# Generated Music Samples
+The graph above show the loss value. The **loss value** of the **training set** is **0.1895**, and **0.2686** for the **evaluation set**.
+
+## Generated Music Samples (48 batch size)
 The generated samples were generated using these settings:   
 temperature=1    
 num_steps=6000   
@@ -46,36 +56,38 @@ https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-
 
 Sample 3
 
-# Result (32 batch size)
-Batch size of 32 was used, with drop rate of 50 percent.      
+## Result (32 batch size)
+**Batch size of 32** was used, with **drop rate** of **50 percent**.      
 
-The blue line is the training set.     
-The orange line is the evaluation set.     
+The **blue line** is the **training set**.     
+The **orange line** is the **evaluation set**.     
 
-<img src="https://user-images.githubusercontent.com/94357278/234107533-47c10fc4-08c0-47d4-a38a-312d95b4a3dd.jpg" alt="loss" width="500" height="300">
-The graph above show the accuracy. The accuracy of the training set is 96.3 percent, and 89.1 percent for the evaluation set.   
+<img src="https://user-images.githubusercontent.com/94357278/235319112-7df55082-a3d6-45f0-b24d-e847f2404e8a.jpg" alt="loss" width="500" height="300">      
 
-<img src="https://user-images.githubusercontent.com/94357278/234107514-04ae8c65-ae8e-4d43-89fe-f8cb01a60487.jpg" alt="loss" width="500" height="300">
-The graph above show the loss value. The loss value of the training set is 0.1242, and 0.5902 for the evaluation set.
+The graph above show the accuracy. The **accuracy** of the **training set** is **94.1 percent**, and **90.2 percent** for **the evaluation set**.   
 
-# Generated Music Samples
+<img src="https://user-images.githubusercontent.com/94357278/235319121-dc76dc74-2362-4afa-8314-444faa3a8204.jpg" alt="loss" width="500" height="300">
+
+The graph above show the loss value. The **loss value** of the **training set** is **0.1753**, and **0.5331** for **the evaluation set**.
+
+## Generated Music Samples (32 batch size)
 The generated samples were generated using these settings:   
 temperature=1    
 num_steps=6000   
 
-https://user-images.githubusercontent.com/94357278/234112926-98e530b5-238a-4403-a769-c49aa7eb34cf.mov   
+https://user-images.githubusercontent.com/94357278/235319863-e0925ac5-300b-4898-acd0-81cc529801c4.mov
 
 Sample 1   
 
-https://user-images.githubusercontent.com/94357278/234112936-463f1229-74ce-4cc1-9af8-db6629255d15.mov   
+https://user-images.githubusercontent.com/94357278/235319870-cf374cb3-da5d-40e0-9152-d13affda449e.mov
 
 Sample 2   
 
-https://user-images.githubusercontent.com/94357278/234112949-1abe61fd-14db-49a0-8d5f-57673a1ee1ee.mov   
+https://user-images.githubusercontent.com/94357278/235319878-5f178b83-8bce-4465-b1fd-d3505dc5d56d.mov
 
 Sample 3   
 
-# Further Use
+## Further Use
 
 I've uploaded the .mag file of the fine-tuned model, so it can be used further.   
 48 batch size:   
