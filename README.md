@@ -57,7 +57,8 @@ https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-
 Sample 3
 
 ## Result (32 batch size)
-**Batch size of 32** was used, with **drop rate** of **50 percent**.      
+**Batch size of 32** was used, with **drop rate** of **50 percent**.     
+After 60k checkpoint, the layer rnn was changed from 3 to 2.     
 
 The **blue line** is the **training set**.     
 The **orange line** is the **evaluation set**.     
