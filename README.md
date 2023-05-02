@@ -57,19 +57,26 @@ https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-
 Sample 3
 
 ## Result (32 batch size)
-**Batch size of 32** was used, with **drop rate** of **50 percent**.     
-After 60k checkpoint, the layer rnn was changed from 3 to 2.     
+**Batch size of 32** was used, with **drop rate** of **25 percent**.       
+The model was trained for 90k checkpoint.       
 
-The **blue line** is the **training set**.     
-The **orange line** is the **evaluation set**.     
+-The model was trained with 50 percent drop rate at the start.    
 
-<img src="https://user-images.githubusercontent.com/94357278/235319112-7df55082-a3d6-45f0-b24d-e847f2404e8a.jpg" alt="loss" width="500" height="300">      
+-After 60k checkpoint, the layer rnn was changed from 3 to 2.            
 
-The graph above show the accuracy. The **accuracy** of the **training set** is **94.1 percent**, and **90.2 percent** for **the evaluation set**.   
+-After 80k checkpoint, drop rate was changed to 25 percent.      
 
-<img src="https://user-images.githubusercontent.com/94357278/235319121-dc76dc74-2362-4afa-8314-444faa3a8204.jpg" alt="loss" width="500" height="300">
+**This time:**    
+The **orange line** is the **training set**.     
+The **blue line** is the **evaluation set**.     
 
-The graph above show the loss value. The **loss value** of the **training set** is **0.1753**, and **0.5331** for **the evaluation set**.
+<img src="https://user-images.githubusercontent.com/94357278/235756373-ce9cc17d-cf09-438e-a118-b3df759a7dc6.jpg" alt="loss" width="500" height="300">      
+
+The graph above show the accuracy. The **accuracy** of the **training set** is **98.3 percent**, and **96.9 percent** for **the evaluation set**.   
+
+<img src="https://user-images.githubusercontent.com/94357278/235756537-e7c26aab-080f-44c2-8c5e-b762a5956841.jpg" alt="loss" width="500" height="300">
+
+The graph above show the loss value. The **loss value** of the **training set** is **0.0526**, and **0.1596** for **the evaluation set**.
 
 ## Generated Music Samples (32 batch size)
 The generated samples were generated using these settings:   
