@@ -83,15 +83,15 @@ The generated samples were generated using these settings:
 temperature=1    
 num_steps=6000   
 
-https://user-images.githubusercontent.com/94357278/235319863-e0925ac5-300b-4898-acd0-81cc529801c4.mov
+https://user-images.githubusercontent.com/94357278/235761317-36e20018-cc4d-41f9-8072-d30742b951f4.mov
 
 Sample 1   
 
-https://user-images.githubusercontent.com/94357278/235319870-cf374cb3-da5d-40e0-9152-d13affda449e.mov
+https://user-images.githubusercontent.com/94357278/235761326-9d6a3753-4d07-475d-a397-05932218edb4.mov
 
 Sample 2   
 
-https://user-images.githubusercontent.com/94357278/235319878-5f178b83-8bce-4465-b1fd-d3505dc5d56d.mov
+https://user-images.githubusercontent.com/94357278/235761340-34a82e1d-d50a-4479-9b27-c77d3da2dffd.mov
 
 Sample 3   
 
