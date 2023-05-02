@@ -80,7 +80,7 @@ The graph above show the loss value. The **loss value** of the **training set** 
 
 ## Generated Music Samples (32 batch size)
 The generated samples were generated using these settings:   
-temperature=1    
+temperature=0.25    
 num_steps=6000   
 
 https://user-images.githubusercontent.com/94357278/235761317-36e20018-cc4d-41f9-8072-d30742b951f4.mov
