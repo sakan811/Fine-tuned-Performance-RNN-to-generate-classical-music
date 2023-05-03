@@ -1,31 +1,32 @@
 # Fine-tuning Performance RNN to Generate Classical Music
 
 This is my research project for one of the modules I'm taking for my Master degree.     
-I might continue training the model further or with different hyperparameters, even though the module ends.
+I might continue with this further, even though my research project finishes.
 
-My goal is to fine-tune the Performance RNN, a model from Magenta project, to generate legit classical music.   
+My goal is to fine-tune and modify the Performance RNN, a model from Magenta project, to enhance its performance to generate good classical music.
 
-The model was fed with 240 classical music scores in MusicXML file formats. All of them are public domain.    
-The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.   
+I will compare the original fine-tuned pre-trained Performance RNN model to the modifed and fine-tuned version of it.
 
-Only the model trained with 48 batch size and 50 percent drop rate is a part of my research project, other version of the trained models aren't.     
+The models will be fed with 240 classical music scores in MusicXML file formats. All of them are public domain.    
+The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.    
+
+The dataset will be divided into 2 datasets, training and evaluation, with ratio of 90:10.    
 
 ## Table of Contents
-- [Result of different hyperparameters](#result-of-different-hyperparameters)
-- [Result (48 batch size)](#result-48-batch-size)
-- [Generated Music Samples (48 batch size)](#generated-music-samples-48-batch-size)
+- [Result (Original Model)](#result-original-model)
+- [Generated Music Samples (Original Model)](#generated-music-samples-original-model)
 - [Result (32 batch size)](#result-32-batch-size)
 - [Generated Music Samples (32 batch size)](#generated-music-samples-32-batch-size)
 - [Further Use](#further-use)
 
-## Result of different hyperparameters
-I decide to train the model with different hyperparameters to compare the outcomes.   
-The dataset was divided into 2 datasets, training and evaluation, with ratio of 90:10.
+## Result (Original Model)
+This is the original model that was fine-tuned with the classical music datasets.    
+Due to my limit computational resource, the batch size need to be reduced to 48 to avoid Out Of Memory.
 
-## Result (48 batch size)
-This version of fine-tuned Performance is a part of my research project.    
 **Batch size of 48** was used, with **drop rate** of **50 percent**.        
-The model was trained until 40k checkpoint.            
+The rest of the hyperparameters'setting was default.     
+
+The model was trained for 40k checkpoint.                  
 
 The **blue line** is the **training set**.   
 The **orange line** is the **evaluation set**.   
@@ -39,7 +40,7 @@ The graph above show the accuracy. The **accuracy** of the **training set** is *
 
 The graph above show the loss value. The **loss value** of the **training set** is **0.1895**, and **0.2686** for the **evaluation set**.
 
-## Generated Music Samples (48 batch size)
+## Generated Music Samples (Original Model)
 The generated samples were generated using these settings:   
 temperature=1    
 num_steps=6000   
@@ -56,29 +57,29 @@ https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-
 
 Sample 3
 
-## Result (32 batch size)
-**Batch size of 32** was used, with **drop rate** of **25 percent**.       
-The model was trained for 90k checkpoint.       
+## Result (Modified Model)
+**The model was modified by**:     
+-Adding the custom loss function that adhere more to the rhythm and harmonic structure of classical music.       
+-Adding the early stop function to make the model stops the training when the loss doesn't improve for a certain number of steps or when the loss value reaches the target loss.     
 
--The model was trained with 50 percent drop rate at the start.    
-
--After 60k checkpoint, the layer rnn was changed from 3 to 2.            
-
--After 80k checkpoint, drop rate was changed to 25 percent.      
-
-**This time:**    
+**Batch size of 48** was used, with **drop rate** of **50 percent**.               
+The rest of the hyperparameters'setting was default.     
+    
+**This time:**       
 The **orange line** is the **training set**.     
-The **blue line** is the **evaluation set**.     
+The **blue line** is the **evaluation set**.       
+   
+Training in progress   
 
-<img src="https://user-images.githubusercontent.com/94357278/235756373-ce9cc17d-cf09-438e-a118-b3df759a7dc6.jpg" alt="loss" width="500" height="300">      
+<!-- <img src="https://user-images.githubusercontent.com/94357278/235756373-ce9cc17d-cf09-438e-a118-b3df759a7dc6.jpg" alt="loss" width="500" height="300">      
 
 The graph above show the accuracy. The **accuracy** of the **training set** is **98.3 percent**, and **96.9 percent** for **the evaluation set**.   
 
 <img src="https://user-images.githubusercontent.com/94357278/235756537-e7c26aab-080f-44c2-8c5e-b762a5956841.jpg" alt="loss" width="500" height="300">
 
-The graph above show the loss value. The **loss value** of the **training set** is **0.0526**, and **0.1596** for **the evaluation set**.
+The graph above show the loss value. The **loss value** of the **training set** is **0.0526**, and **0.1596** for **the evaluation set**. -->
 
-## Generated Music Samples (32 batch size)
+<!-- ## Generated Music Samples (32 batch size)
 The generated samples were generated using these settings:   
 temperature=0.25    
 num_steps=6000   
@@ -93,15 +94,15 @@ Sample 2
 
 https://user-images.githubusercontent.com/94357278/235761340-34a82e1d-d50a-4479-9b27-c77d3da2dffd.mov
 
-Sample 3   
+Sample 3    -->
 
 ## Further Use
 
 I've uploaded the .mag file of the fine-tuned model, so it can be used further.   
-48 batch size:   
+Fine-tuned Original Model:   
 https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/classical_fine-tuned_performance_rnn.mag       
-32 batch size:    
-https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/32_classical_fine-tuned_performance_rnn.mag   
+<!-- 32 batch size:    
+https://github.com/sakan811/Fine-tuning-Performance-RNN-to-generate-classical-music/blob/main/32_classical_fine-tuned_performance_rnn.mag    -->
 
 You can look at this page for the tutorial on how to use the Performance RNN   
 https://github.com/magenta/magenta/tree/main/magenta/models/performance_rnn
