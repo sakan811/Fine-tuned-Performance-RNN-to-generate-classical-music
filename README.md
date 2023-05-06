@@ -3,7 +3,7 @@
 This is my research project for one of the modules I'm taking for my Master degree.     
 I might continue with this further, even though my research project finishes.
 
-My goal is to fine-tune and modify the Performance RNN, a model from Magenta project, to enhance its performance to generate good classical music.
+My goal is to fine-tune and modify the Performance RNN, a model from Magenta project, to enhance its performance to generate better classical music.
 
 I will compare the original fine-tuned pre-trained Performance RNN model to the modifed and fine-tuned version of it.
 
