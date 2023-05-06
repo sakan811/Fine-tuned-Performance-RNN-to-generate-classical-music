@@ -5,9 +5,10 @@ I might continue with this further, even though my research project finishes.
 
 My goal is to fine-tune and modify the Performance RNN, a model from Magenta project, to enhance its performance to generate better classical music.
 
-I will compare the original fine-tuned pre-trained Performance RNN model to the modifed and fine-tuned version of it.
+I will compare the original fine-tuned pre-trained Performance RNN model to the modifed and fine-tuned version of the model.    
 
 ## Training
+All of the model used are pre-trained models.     
 
 The models will be fed with 240 classical music scores in MusicXML file formats. All of them are public domain.      
 The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.      
