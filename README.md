@@ -7,21 +7,24 @@ My goal is to fine-tune and modify the Performance RNN, a model from Magenta pro
 
 I will compare the original fine-tuned pre-trained Performance RNN model to the modifed and fine-tuned version of it.
 
-The models will be fed with 240 classical music scores in MusicXML file formats. All of them are public domain.    
-The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.    
+## Training
+
+The models will be fed with 240 classical music scores in MusicXML file formats. All of them are public domain.      
+The 240 MusicXML files were made of 20 classical music scores with each of them transposed to 12 different keys.      
 
 The dataset will be divided into 2 datasets, training and evaluation, with ratio of 90:10.    
+
+Due to my limit computational resource, the batch size need to be reduced to 48 to avoid Out Of Memory.   
 
 ## Table of Contents
 - [Result (Original Model)](#result-original-model)
 - [Generated Music Samples (Original Model)](#generated-music-samples-original-model)
-- [Result (32 batch size)](#result-32-batch-size)
-- [Generated Music Samples (32 batch size)](#generated-music-samples-32-batch-size)
+- [Result (Modified Model)](#result-modified-model)
+- [Generated Music Samples (Modified Model)](#generated-music-samples-modified-model)
 - [Further Use](#further-use)
 
 ## Result (Original Model)
 This is the original model that was fine-tuned with the classical music datasets.    
-Due to my limit computational resource, the batch size need to be reduced to 48 to avoid Out Of Memory.
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.        
 The rest of the hyperparameters' setting was default.     
