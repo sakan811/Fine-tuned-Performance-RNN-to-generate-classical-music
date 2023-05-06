@@ -24,7 +24,7 @@ This is the original model that was fine-tuned with the classical music datasets
 Due to my limit computational resource, the batch size need to be reduced to 48 to avoid Out Of Memory.
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.        
-The rest of the hyperparameters'setting was default.     
+The rest of the hyperparameters' setting was default.     
 
 The model was trained for 40k checkpoint.                  
 
@@ -63,7 +63,7 @@ Sample 3
 -Adding the early stop function to make the model stops the training when the loss doesn't improve for a certain number of steps or when the loss value reaches the target loss.     
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.               
-The rest of the hyperparameters'setting was default.     
+The rest of the hyperparameters' setting was default.     
     
 **This time:**       
 The **orange line** is the **training set**.     
