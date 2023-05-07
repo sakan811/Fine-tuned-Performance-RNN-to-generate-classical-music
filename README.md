@@ -115,7 +115,7 @@ Sample 3    -->
                 - training will stop when the target accuracy is reached or accuracy isn't improved for a certain number of steps
                 - If you want to use "max" mode, the following command line is an example:
                 ```bash
-                --early_stop='mode=min,target_acc=0.9,patience=10' \
+                --early_stop='mode=max,target_acc=0.9,patience=10' \
                 ```
             - the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable multipied by the "summary_frequency" variable
             - the "summary_frequency" is 10. 
