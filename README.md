@@ -102,11 +102,27 @@ Sample 3    -->
 
 ## List of Modified files
 - **events_rnn_train.py**
-- **Implement early stopping**
-- training will stop when the target loss is reached or loss isn't improved for a certain number of steps
-- the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable multipied by the "summary_frequency" variable
-- the "summary_frequency" is 10. 
-- So if you want the algorithm to tolerate for 1000 steps if the loss value isn't improved before stopping the training
+    - **Implement early stopping**
+        - You can set the "mode", "patience", and the "target loss" or "target accuracy" according to the mode
+        - There are 2 modes: "min" and "max"
+            - "min" mode is for monitoring loss value and target loss has to be set. 
+                - training will stop when the target loss is reached or loss isn't improved for a certain number of steps
+                - If you want to use "min" mode, the following command line is an example:
+                ```bash
+                --early_stop='mode=min,target_loss=0.12,patience=10' \
+                ```
+            - "max" mode is for monitoring accuracy and target accuracy has to be set. 
+                - training will stop when the target accuracy is reached or accuracy isn't improved for a certain number of steps
+                - If you want to use "max" mode, the following command line is an example:
+                ```bash
+                --early_stop='mode=min,target_acc=0.9,patience=10' \
+                ```
+            - the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable multipied by the "summary_frequency" variable
+            - the "summary_frequency" is 10. 
+            - the default "patience" is 100. 
+                - So if you want the algorithm to tolerate for 1000 steps when the loss value isn't improved before stopping the training, you can set the "patience" to 100.
+- **events_rnn_graph.py**
+    - **Modify the loss function**
 
 
 ## Further Use
