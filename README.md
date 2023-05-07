@@ -100,6 +100,15 @@ https://user-images.githubusercontent.com/94357278/235761340-34a82e1d-d50a-4479-
 
 Sample 3    -->
 
+## List of Modified files
+- **events_rnn_train.py**
+- **Implement early stopping**
+- training will stop when the target loss is reached or loss isn't improved for a certain number of steps
+- the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable multipied by the "summary_frequency" variable
+- the "summary_frequency" is 10. 
+- So if you want the algorithm to tolerate for 1000 steps if the loss value isn't improved before stopping the training
+
+
 ## Further Use
 
 I've uploaded the .mag file of the fine-tuned model, so it can be used further.   
