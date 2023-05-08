@@ -1,4 +1,4 @@
-# Fine-tuning Performance RNN to Generate Classical Music
+# Modify and Fine-tune Performance RNN to Generate Classical Music
 
 This is my research project for one of the modules I'm taking for my Master degree.     
 I might continue with this further, even though my research project finishes.
