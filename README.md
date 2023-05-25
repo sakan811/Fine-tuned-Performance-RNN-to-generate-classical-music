@@ -85,7 +85,11 @@ L1 regularization scale was changed from 0.0001 to 0.00001 after 28k steps.
  - The accuracy of the model wasn't improved. The L1 regularization scale was changed to make the accuracy improve.    
 
 L1 regularization scale was changed from 0.00001 to 0.000055 after 35k steps.      
- - The accuracy of the model wasn't improved. The L1 regularization scale was changed to make the accuracy improve.     
+ - The accuracy of the evaluation set was lower that the training set.
+
+L1 regularization scale was changed to 0.00055 after 36k steps.          
+ - The accuracy of the evaluation set was lower that the training set.    
+ - The accuracy of the model also wasn't improved.               
 
 <!-- <img src="https://user-images.githubusercontent.com/94357278/235756373-ce9cc17d-cf09-438e-a118-b3df759a7dc6.jpg" alt="loss" width="500" height="300">      
 
