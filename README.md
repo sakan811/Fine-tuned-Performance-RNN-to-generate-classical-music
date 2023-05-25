@@ -144,8 +144,8 @@ Sample 3    -->
                 - So if you want the algorithm to tolerate for 1000 steps when the loss value isn't improved before stopping the training, you can set the "patience" to 100.
 - **events_rnn_graph.py**
     - **Modify the loss function**
-     - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.
-      - To enable Rhythm loss, use this following command line:
+     - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
+      - To enable Rhythm loss, use this following command line:     
       ```bash
       --rhythm_loss \
       ``` 
