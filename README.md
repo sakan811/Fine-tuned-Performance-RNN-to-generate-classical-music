@@ -75,6 +75,8 @@ The **blue line** is the **evaluation set**.
    
 Training in progress
 
+## Training Changelog
+
 L1 regularization was used when the model reach 11.5k steps.   
  - To avoid data overfitting. As during this steps, the accuracy of evaluation set was quite lower than the training set.
    
@@ -89,7 +91,10 @@ L1 regularization scale was changed from 0.00001 to 0.000055 after 35k steps.
 
 L1 regularization scale was changed to 0.00055 after 36k steps.          
  - The accuracy of the evaluation set was lower that the training set.    
- - The accuracy of the model also wasn't improved.               
+ - The accuracy of the model also wasn't improved.
+
+L1 regularization scale was changed back to 0.001 after around 36.3k steps.          
+ - To try fixing the evaluation set's accuracy problem.
 
 <!-- <img src="https://user-images.githubusercontent.com/94357278/235756373-ce9cc17d-cf09-438e-a118-b3df759a7dc6.jpg" alt="loss" width="500" height="300">      
 
