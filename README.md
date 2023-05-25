@@ -145,10 +145,10 @@ Sample 3    -->
 - **events_rnn_graph.py**
     - **Modify the loss function**
      - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
-      - To enable Rhythm loss, use this following command line:     
-      ```bash
-      --rhythm_loss \
-      ``` 
+        - To enable Rhythm loss, use this following command line:     
+            ```
+            --rhythm_loss \
+            ``` 
 
 
 ## Further Use
