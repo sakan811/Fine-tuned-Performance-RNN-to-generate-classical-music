@@ -123,19 +123,19 @@ Sample 3    -->
 
 ## List of Modified files
 - **events_rnn_train.py**
-    - **Implement early stopping**
+    - **Implemented early stopping**
         - You can set the "mode", "patience", and the "target loss" or "target accuracy" according to the mode
         - There are 2 modes: "min" and "max"
             - "min" mode is for monitoring loss value and target loss has to be set. 
                 - training will stop when the target loss is reached or loss isn't improved for a certain number of steps
                 - If you want to use "min" mode, the following command line is an example:
-                ```bash
+                ```
                 --early_stop='mode=min,target_loss=0.12,patience=10' \
                 ```
             - "max" mode is for monitoring accuracy and target accuracy has to be set. 
                 - training will stop when the target accuracy is reached or accuracy isn't improved for a certain number of steps
                 - If you want to use "max" mode, the following command line is an example:
-                ```bash
+                ```   
                 --early_stop='mode=max,target_acc=0.9,patience=10' \
                 ```
             - the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable multipied by the "summary_frequency" variable
@@ -143,13 +143,26 @@ Sample 3    -->
             - the default "patience" is 100. 
                 - So if you want the algorithm to tolerate for 1000 steps when the loss value isn't improved before stopping the training, you can set the "patience" to 100.
 - **events_rnn_graph.py**
-    - **Modify the loss function**
-     - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
-        - To enable Rhythm loss, use this following command line:     
-            ```
-            --rhythm_loss \
-            ``` 
-
+    - **Modified the loss function**
+        - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
+            - To enable Rhythm loss, use this following command line:     
+                ```
+                --rhythm_loss \
+                ``` 
+            - To enable Harmonic progression loss, use this following command line:     
+                ```
+                --harmony_loss \
+                ``` 
+    - **Added L1 Regularization**
+        - Added **L1 Regularization** on top of the original loss function.  
+            - To enable L1 Regularization, use this following command line:     
+                ```
+                --l1_regular
+                ```   
+- **performance_rnn_train.py**
+    - Added command line flags for Early Stopping, Rhythm Loss, Harmonic Progression Loss, and L1 Regularization, so they can be controlled manually.
+    - Added the **parse_early_stopping_params** function to parse a string containing Early Stopping parameters.
+    - Modified the **main** function so that the flags and the added function can work properly.
 
 ## Further Use
 
