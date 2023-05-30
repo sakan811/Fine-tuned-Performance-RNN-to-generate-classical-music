@@ -96,6 +96,9 @@ L1 regularization scale was changed to 0.00055 after 36k steps.
 L1 regularization scale was changed back to 0.001 after around 36.3k steps.          
  - To try fixing the evaluation set's accuracy problem.
 
+L1 regularization scale was changed to 0.0001 again after around 51k steps.          
+ - To improve the model accuracy.
+
 <!-- <img src="https://user-images.githubusercontent.com/94357278/235756373-ce9cc17d-cf09-438e-a118-b3df759a7dc6.jpg" alt="loss" width="500" height="300">      
 
 The graph above show the accuracy. The **accuracy** of the **training set** is **98.3 percent**, and **96.9 percent** for **the evaluation set**.   
