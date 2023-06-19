@@ -29,9 +29,6 @@ This is the original model that was fine-tuned with the classical music datasets
 **Batch size of 48** was used, with **drop rate** of **50 percent**.        
 The rest of the hyperparameters' setting was the default.    
 
-Changelog:
-- The learning rate was changed from 0.001 to 0.002 at 65K steps to make the model learns faster
-
 <!-- ## Generated Music Samples (Original Model)
 The generated samples were generated using these settings:   
 temperature=1    
