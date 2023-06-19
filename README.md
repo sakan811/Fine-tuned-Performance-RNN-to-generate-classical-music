@@ -27,8 +27,12 @@ The dataset will be divided into 2 datasets, training and evaluation, with ratio
 This is the original model that was fine-tuned with the classical music datasets.    
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.        
-The rest of the hyperparameters' setting was the default.    
+The rest of the hyperparameters' setting was the default.  
 
+Changelog:
+- At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.
+- At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.
+  
 <!-- ## Generated Music Samples (Original Model)
 The generated samples were generated using these settings:   
 temperature=1    
