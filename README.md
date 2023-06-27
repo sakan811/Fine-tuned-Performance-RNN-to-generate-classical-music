@@ -32,9 +32,9 @@ The rest of the hyperparameters' setting was the default.
 - At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.
   
 **Generated Music Samples:**      
-Sample 1: https://drive.google.com/file/d/1JSktY40pAn1J_v1ifLsBPnGg5zvm3xfl/view?usp=drive_link   
-Sample 2: https://drive.google.com/file/d/1VMXVVdngXHFpF1sY8EPsqQdwbTCyrF1v/view?usp=drive_link   
-Sample 3: https://drive.google.com/file/d/1nLKE7EGWrH9mE1OX0Y6JEhm944AYsKFc/view?usp=drive_link   
+Sample 1: https://drive.google.com/file/d/1ocAQDIHd97JwZlu8Fzm2Q5kIA0v9ypyz/view?usp=drive_link        
+Sample 2: https://drive.google.com/file/d/1wW9zj-_rdiciBiocogSVHwyueCPPhH5e/view?usp=drive_link     
+Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view?usp=drive_link      
 
 ## Result (Modified Model)
 **The model was modified by**:     
@@ -42,7 +42,7 @@ Sample 3: https://drive.google.com/file/d/1nLKE7EGWrH9mE1OX0Y6JEhm944AYsKFc/view
 -Adding the early stop function to make the model stops the training when the loss doesn't improve for a certain number of steps or when the loss value reaches the target loss.     
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.               
-The rest of the hyperparameters' setting was default.     
+The rest of the hyperparameters' setting was the default.     
     
 ## List of Modified files
 - **events_rnn_train.py**
