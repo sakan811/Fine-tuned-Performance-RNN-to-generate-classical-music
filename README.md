@@ -18,9 +18,7 @@ The dataset will be divided into 2 datasets, training, and evaluation, with a ra
 
 ## Table of Contents
 - [Result (Original Model)](#result-original-model)
-- [Generated Music Samples (Original Model)](#generated-music-samples-original-model)
 - [Result (Modified Model)](#result-modified-model)
-- [Generated Music Samples (Modified Model)](#generated-music-samples-modified-model)
 - [Further Use](#further-use)
 
 ## Result (Original Model)
@@ -29,26 +27,14 @@ This is the original pre-trained Performance RNN model that was fine-tuned with 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.        
 The rest of the hyperparameters' setting was the default.  
 
-Changelog:
+**Changelog:**
 - At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.
 - At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.
   
-<!-- ## Generated Music Samples (Original Model)
-The generated samples were generated using these settings:   
-temperature=1    
-num_steps=6000   
-
-https://user-images.githubusercontent.com/94357278/232325485-83642232-7d7d-40e2-a5bf-681c7fd35bdf.mov
-
-Sample 1
-
-https://user-images.githubusercontent.com/94357278/232325495-6156a4c2-85a7-46ce-becd-d6ddf217b530.mov
-
-Sample 2
-
-https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-a9b5-6a809296ea6c.mov
-
-Sample 3 -->
+**Generated Music Samples:**      
+Sample 1: https://drive.google.com/file/d/1JSktY40pAn1J_v1ifLsBPnGg5zvm3xfl/view?usp=drive_link   
+Sample 2: https://drive.google.com/file/d/1VMXVVdngXHFpF1sY8EPsqQdwbTCyrF1v/view?usp=drive_link   
+Sample 3: https://drive.google.com/file/d/1nLKE7EGWrH9mE1OX0Y6JEhm944AYsKFc/view?usp=drive_link   
 
 ## Result (Modified Model)
 **The model was modified by**:     
