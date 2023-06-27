@@ -22,20 +22,20 @@ The dataset will be divided into 2 datasets, training, and evaluation, with a ra
 - [Further Use](#further-use)
 
 ## Result (Original Model)
-This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.    
-
-**Batch size of 48** was used, with **drop rate** of **50 percent**.        
-The rest of the hyperparameters' setting was the default.  
-
-**Changelog:**
-- At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.
-- At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.
+This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.       
+ 
+**Generated Music Samples:**         
+Sample 1: https://drive.google.com/file/d/1ocAQDIHd97JwZlu8Fzm2Q5kIA0v9ypyz/view?usp=drive_link          
+Sample 2: https://drive.google.com/file/d/1wW9zj-_rdiciBiocogSVHwyueCPPhH5e/view?usp=drive_link      
+Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view?usp=drive_link       
   
-**Generated Music Samples:**      
-Sample 1: https://drive.google.com/file/d/1ocAQDIHd97JwZlu8Fzm2Q5kIA0v9ypyz/view?usp=drive_link        
-Sample 2: https://drive.google.com/file/d/1wW9zj-_rdiciBiocogSVHwyueCPPhH5e/view?usp=drive_link     
-Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view?usp=drive_link      
-
+**Training details:**        
+**Batch size of 48** was used, with **drop rate** of **50 percent**. The rest of the hyperparameters' setting was the default.        
+  
+**Changelog:**   
+- At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.  
+- At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.   
+  
 ## Result (Modified Model)
 **The model was modified by**:     
 -Adding the custom loss function that adheres more to the rhythm and harmonic structure of classical music.       
