@@ -1,58 +1,48 @@
 # Modify and Fine-tune Performance RNN to Generate Classical Music
 
-This is my research project for one of the modules I'm taking for my Master degree.     
+This is my research project for one of the modules I'm taking for my Master's degree.     
 I might continue with this further, even though my research project finishes.
 
-My goal is to fine-tune and modify the Performance RNN, a model from Magenta project, to enhance its performance to generate better classical music.
+My goal is to fine-tune and modify the Performance RNN, a model from the Magenta project, to enhance its performance to generate better classical music.
 
-I will compare the original fine-tuned pre-trained Performance RNN model to the modifed and fine-tuned version of the model.    
+I will compare the original fine-tuned pre-trained Performance RNN model to the modified and fine-tuned version of the model.    
 
 ## Training
-All of the model used are pre-trained models.     
+All of the models used are pre-trained models.     
 
 The models were fed with 1329 MIDI and MusicXML files in total.     
 40 MusicXML files were from Musescore and they are all public domain.   
 The rest was from Aligned Scores and Performances (ASAP) dataset: https://github.com/fosfrancesco/asap-dataset    
      
-The dataset will be divided into 2 datasets, training and evaluation, with ratio of 90:10.    
+The dataset will be divided into 2 datasets, training, and evaluation, with a ratio of 90:10.    
 
 ## Table of Contents
 - [Result (Original Model)](#result-original-model)
-- [Generated Music Samples (Original Model)](#generated-music-samples-original-model)
 - [Result (Modified Model)](#result-modified-model)
-- [Generated Music Samples (Modified Model)](#generated-music-samples-modified-model)
 - [Further Use](#further-use)
 
 ## Result (Original Model)
-This is the original model that was fine-tuned with the classical music datasets.    
-
-**Batch size of 48** was used, with **drop rate** of **50 percent**.        
-The rest of the hyperparameters' setting was default.     
-
-<!-- ## Generated Music Samples (Original Model)
-The generated samples were generated using these settings:   
-temperature=1    
-num_steps=6000   
-
-https://user-images.githubusercontent.com/94357278/232325485-83642232-7d7d-40e2-a5bf-681c7fd35bdf.mov
-
-Sample 1
-
-https://user-images.githubusercontent.com/94357278/232325495-6156a4c2-85a7-46ce-becd-d6ddf217b530.mov
-
-Sample 2
-
-https://user-images.githubusercontent.com/94357278/232325498-3688a877-2446-49b0-a9b5-6a809296ea6c.mov
-
-Sample 3 -->
-
+This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.       
+ 
+**Generated Music Samples:**         
+Sample 1: https://drive.google.com/file/d/1ocAQDIHd97JwZlu8Fzm2Q5kIA0v9ypyz/view?usp=drive_link          
+Sample 2: https://drive.google.com/file/d/1wW9zj-_rdiciBiocogSVHwyueCPPhH5e/view?usp=drive_link      
+Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view?usp=drive_link       
+  
+**Training details:**        
+**Batch size of 48** was used, with **drop rate** of **50 percent**. The rest of the hyperparameters' setting was the default.        
+  
+**Changelog:**   
+- At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.  
+- At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.   
+  
 ## Result (Modified Model)
 **The model was modified by**:     
--Adding the custom loss function that adhere more to the rhythm and harmonic structure of classical music.       
+-Adding the custom loss function that adheres more to the rhythm and harmonic structure of classical music.       
 -Adding the early stop function to make the model stops the training when the loss doesn't improve for a certain number of steps or when the loss value reaches the target loss.     
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.               
-The rest of the hyperparameters' setting was default.     
+The rest of the hyperparameters' setting was the default.     
     
 ## List of Modified files
 - **events_rnn_train.py**
