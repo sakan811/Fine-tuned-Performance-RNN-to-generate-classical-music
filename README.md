@@ -39,7 +39,7 @@ Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view
 ## Result (Modified Model)
 **The model was modified by**:     
 -Adding the custom loss function that adheres more to the rhythm and harmonic structure of classical music.       
--Adding the early stop function to make the model stops the training when the loss doesn't improve for a certain number of steps or when the loss value reaches the target loss.     
+-Adding the early stop function to make the model stops the training when the loss and accuracy from evaluation set don't improve for a certain number of steps.     
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.               
 The rest of the hyperparameters' setting was the default. 
