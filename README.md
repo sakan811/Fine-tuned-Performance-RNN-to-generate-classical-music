@@ -58,6 +58,10 @@ The rest of the hyperparameters' setting was the default.
             - the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable.
             - the "patience" need to be set if you want to use early stopping. 
                 - So if you want the algorithm to tolerate for 1,000 steps when the loss and accuracy of the evaluation set aren't improved before stopping the training, you can set the "patience" to 1,000.
+            - To enable Early stopping, use this following command line:     
+                ```
+                --early_stop='patience=1000' \
+                ``` 
 - **events_rnn_graph.py**
     - **Modified the loss function**
         - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
