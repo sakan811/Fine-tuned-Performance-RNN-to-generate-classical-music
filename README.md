@@ -45,34 +45,19 @@ Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view
 The rest of the hyperparameters' setting was the default. 
 
 **Changelog:**   
-- The first time I trained this modified model, I set the early stop to wait for a span of 1000 steps with no improvement until stop training. The span was determined by the patience value, which I set to 100, multiplied by the summary frequency value, which is 10. The result is 1000 steps span. The model didn't improve much for a span of 1,000 steps, and the early stop was activated several times. After continuing several times, the result was still the same, so I decided to start a new fine-tuning process for this modified model.
 - For this new fine-tuning process, I started by setting the patience value to 27, which equaled a span of 27 steps waiting with no improvement until stop. The early stop activated around 200 steps. After testing the generated music, it wasn't impressive, so I started the training with a patience value set as 270.
 - The early stop activated at around 520 steps, and the result was better, but still wasn't as I expected. I looked at the graph and found that the model was underfitting, as both the training and evaluation set line was heading down, so I started the training again with patience set to 540.
 - The early stop activated at around 1,100 steps, but the model was still underfitting, so I started the training again with patience set to 1,080.
 - The early stop activated at around 4,000 steps, and the was improving, so I started again with patience set to 2,160.
-
     
 ## List of Modified files
 - **events_rnn_train.py**
     - **Implemented early stopping**
-        - You can set the "mode", "patience", and the "target loss" or "target accuracy" according to the mode
-        - There are 2 modes: "min" and "max"
-            - "min" mode is for monitoring loss value and target loss has to be set. 
-                - training will stop when the target loss is reached or loss isn't improved for a certain number of steps
-                - If you want to use "min" mode, the following command line is an example:
-                ```
-                --early_stop='mode=min,target_loss=0.12,patience=10' \
-                ```
-            - "max" mode is for monitoring accuracy and target accuracy has to be set. 
-                - training will stop when the target accuracy is reached or accuracy isn't improved for a certain number of steps
-                - If you want to use "max" mode, the following command line is an example:
-                ```   
-                --early_stop='mode=max,target_acc=0.9,patience=10' \
-                ```
-            - the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable multipied by the "summary_frequency" variable
-            - the "summary_frequency" is 10. 
-            - the default "patience" is 100. 
-                - So if you want the algorithm to tolerate for 1000 steps when the loss value isn't improved before stopping the training, you can set the "patience" to 100.
+        - Early stopping takes the accuracy and loss from evaluation set to determine when the training should stop.
+        - You can set the "patience" value.
+            - the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable.
+            - the "patience" need to be set if you want to use early stopping. 
+                - So if you want the algorithm to tolerate for 1,000 steps when the loss and accuracy of the evaluation set aren't improved before stopping the training, you can set the "patience" to 1,000.
 - **events_rnn_graph.py**
     - **Modified the loss function**
         - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
