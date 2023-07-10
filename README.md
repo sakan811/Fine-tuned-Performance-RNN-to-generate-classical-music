@@ -79,7 +79,7 @@ The rest of the hyperparameters' setting was the default.
         - Added **L1 Regularization** on top of the original loss function.  
             - To enable L1 Regularization, use this following command line:     
                 ```
-                --l1_regular
+                --l1_regular \
                 ```   
 - **performance_rnn_train.py**
     - Added command line flags for Early Stopping, Rhythm Loss, Harmonic Progression Loss, and L1 Regularization, so they can be controlled manually.
