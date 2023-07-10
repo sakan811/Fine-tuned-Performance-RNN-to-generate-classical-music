@@ -45,7 +45,9 @@ Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view
 The rest of the hyperparameters' setting was the default. 
 
 **Changelog:**   
-- For this new fine-tuning process, I started by setting the patience value to 27, which equaled a span of 27 steps waiting with no improvement until stop. The early stop activated around 200 steps. After testing the generated music, it wasn't impressive, so I started the training with a patience value set as 270.
+- For the fine-tuning process of this modified model, I started by setting the early stopping as small value and then if the early stopping was activaited and the model was still improving or was underfitting, the early stopping value would be doubled up. 
+- Early stopping value was defined by "patience" value, which is the number of steps that the early stopping algorithm will tolerate before stopping the training when it sees that both accuracy and loss from the evaluation set aren't improving anymore.
+- I started by setting the patience value to 27, which equaled a span of 27 steps waiting with no improvement until stop. The early stop activated around 200 steps. After testing the generated music, it wasn't impressive, so I started the training with a patience value set as 270.
 - The early stop activated at around 520 steps, and the result was better, but still wasn't as I expected. I looked at the graph and found that the model was underfitting, as both the training and evaluation set line was heading down, so I started the training again with patience set to 540.
 - The early stop activated at around 1,100 steps, but the model was still underfitting, so I started the training again with patience set to 1,080.
 - The early stop activated at around 4,000 steps, and the was improving, so I started again with patience set to 2,160.
@@ -55,9 +57,9 @@ The rest of the hyperparameters' setting was the default.
     - **Implemented early stopping**
         - Early stopping takes the accuracy and loss from evaluation set to determine when the training should stop.
         - You can set the "patience" value.
-            - the number of steps that the early stopping algorithm will tolerate is defined by the "patience" variable.
+            - "patience" is the number of steps that the early stopping algorithm will tolerate when it sees that both accuracy and loss from the evaluation set aren't improving anymore.
+                - So if you want the algorithm to tolerate for 1,000 steps when the loss and accuracy of the evaluation set aren't improved before  stopping the training, you can set the "patience" to 1,000.           
             - the "patience" need to be set if you want to use early stopping. 
-                - So if you want the algorithm to tolerate for 1,000 steps when the loss and accuracy of the evaluation set aren't improved before stopping the training, you can set the "patience" to 1,000.
             - To enable Early stopping, use this following command line:     
                 ```
                 --early_stop='patience=1000' \
