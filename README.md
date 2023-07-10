@@ -49,6 +49,7 @@ The rest of the hyperparameters' setting was the default.
 - For this new fine-tuning process, I started by setting the patience value to 27, which equaled a span of 27 steps waiting with no improvement until stop. The early stop activated around 200 steps. After testing the generated music, it wasn't impressive, so I started the training with a patience value set as 270.
 - The early stop activated at around 520 steps, and the result was better, but still wasn't as I expected. I looked at the graph and found that the model was underfitting, as both the training and evaluation set line was heading down, so I started the training again with patience set to 540.
 - The early stop activated at around 1,100 steps, but the model was still underfitting, so I started the training again with patience set to 1,080.
+- The early stop activated at around 4,000 steps, and the was improving, so I started again with patience set to 2,160.
 
     
 ## List of Modified files
