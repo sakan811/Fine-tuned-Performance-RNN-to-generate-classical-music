@@ -42,7 +42,12 @@ Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view
 -Adding the early stop function to make the model stops the training when the loss doesn't improve for a certain number of steps or when the loss value reaches the target loss.     
 
 **Batch size of 48** was used, with **drop rate** of **50 percent**.               
-The rest of the hyperparameters' setting was the default.     
+The rest of the hyperparameters' setting was the default. 
+
+**Changelog:**   
+- The first time I trained this modified model, I set the early stop to wait for a span of 1000 steps with no improvement until stop training. The span was determined by the patience value, which I set it to 100, multiplied by the summary frequency value, which is 10. The result is 1000 steps span. The model didn't improve much for a span of 1,000 steps, and the early stop was activated several times. After continuing several times, the result was still the same, so I decided to start a new fine-tuning process for this modified model.
+- For this new fine-tuning process, I started by setting the patience value to 27, which equaled a span of 27 steps waiting with no improvement until stop. The early stop activated around 200 steps. After testing the generated music, it wasn't impressive, so I started the training with a patience value set as 270.
+
     
 ## List of Modified files
 - **events_rnn_train.py**
