@@ -56,6 +56,7 @@ The rest of the hyperparameters' setting was the default.
 - The early stop activated at around 4,000 steps, and the model was improving, so I started again with patience set to 2,160.
 - The early stop activated at around 8,940 steps, and the model's performance seemed to stall in terms of accuracy in evaluation set, but the loss was still improving. 
 - I found that the model took around 2,000 steps to improve for both accuracy and loss, so I started the training again with the same patience value.
+- The early stop activated at around 11,500 steps. The loss and accuracy was improving very subtly. I decided to continue the training with the same patience value.
     
 ## List of Modified files
 - **events_rnn_train.py**
