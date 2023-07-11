@@ -45,12 +45,17 @@ Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view
 The rest of the hyperparameters' setting was the default. 
 
 **Changelog:**   
-- For the fine-tuning process of this modified model, I started by setting the early stopping as small value and then if the early stopping was activaited and the model was still improving or was underfitting, the early stopping value would be doubled up. 
-- Early stopping value was defined by "patience" value, which is the number of steps that the early stopping algorithm will tolerate before stopping the training when it sees that both accuracy and loss from the evaluation set aren't improving anymore.
-- I started by setting the patience value to 27, which equaled a span of 27 steps waiting with no improvement until stop. The early stop activated around 200 steps. After testing the generated music, it wasn't impressive, so I started the training with a patience value set as 270.
-- The early stop activated at around 520 steps, and the result was better, but still wasn't as I expected. I looked at the graph and found that the model was underfitting, as both the training and evaluation set line was heading down, so I started the training again with patience set to 540.
-- The early stop activated at around 1,100 steps, but the model was still underfitting, so I started the training again with patience set to 1,080.
-- The early stop activated at around 4,000 steps, and the was improving, so I started again with patience set to 2,160.
+- For the fine-tuning process of this modified model, I started by setting the early stopping as small value.
+    - If the early stopping was activated and the model was still improving or was underfitting, I would increase the early stop value and started the training again. 
+    - When I found the actual a time span that the model took to improve, I would set the patience to that value approximately.
+        - Early stopping value was defined by "patience" value, which is the number of steps that the early stopping algorithm will tolerate before stopping the training when it sees that both accuracy and loss from the evaluation set aren't improving anymore.
+- I started by setting the patience value to 27.
+- The early stop activated around 200 steps. The model was still improving, so I started the training again with a patience value set to 270.
+- The early stop activated at around 520 steps, and the model was still improving, so I started the training again with patience set to 540.
+- The early stop activated at around 1,100 steps, but the model was underfitting, so I started the training again with patience set to 1,080.
+- The early stop activated at around 4,000 steps, and the model was improving, so I started again with patience set to 2,160.
+- The early stop activated at around 8,940 steps, and the model's performance seemed to stall in terms of accuracy in evaluation set, but the loss was still improving. 
+- I found that the model took around 2,000 steps to improve for both accuracy and loss, so I started the training again with the same patience value.
     
 ## List of Modified files
 - **events_rnn_train.py**
