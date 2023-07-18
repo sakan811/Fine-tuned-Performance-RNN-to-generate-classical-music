@@ -3,9 +3,9 @@
 This is my research project for one of the modules I'm taking for my Master's degree.     
 I might continue with this further, even though my research project finishes.
 
-My goal is to fine-tune and modify the Performance RNN, a model from the Magenta project, to enhance its performance to generate better classical music.
+My goal is to create another version of Performance RNN that can generate classical music that sounds close to human-composed classical music.
 
-I will compare the original fine-tuned pre-trained Performance RNN model to the modified and fine-tuned version of the model.    
+The project involved 3 iteration processes that involved model modifications and fine-tuning processes.
 
 ## Training
 All of the models used are pre-trained models.     
@@ -17,11 +17,11 @@ The rest was from Aligned Scores and Performances (ASAP) dataset: https://github
 The dataset will be divided into 2 datasets, training, and evaluation, with a ratio of 90:10.    
 
 ## Table of Contents
-- [Result (Original Model)](#result-original-model)
-- [Result (Modified Model)](#result-modified-model)
+- [Result of the 1st Iteration (Original Model)](#result-original-model)
+- [Result of the 2nd Iteration (1st Modified Model)](#result-modified-model)
 - [Further Use](#further-use)
 
-## Result (Original Model)
+## Result of the 1st Iteration (Original Model)
 This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.       
  
 **Generated Music Samples:**         
@@ -30,34 +30,32 @@ Sample 2: https://drive.google.com/file/d/1wW9zj-_rdiciBiocogSVHwyueCPPhH5e/view
 Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view?usp=drive_link       
   
 **Training details:**        
-**Batch size of 48** was used, with **drop rate** of **50 percent**. The rest of the hyperparameters' setting was the default.        
-  
+**Batch size of 48** was used, with **drop rate** of **50 percent**.    
+The rest of the hyperparameters' setting was the default. 
+
 **Changelog:**   
 - At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.  
 - At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.   
   
-## Result (Modified Model)
-**The model was modified by**:     
--Adding the custom loss function that adheres more to the rhythm and harmonic structure of classical music.       
--Adding the early stop function to make the model stops the training when the loss and accuracy from evaluation set don't improve for a certain number of steps.     
+## Result of the 2nd Iteration (1st Modified Model)
 
-**Batch size of 48** was used, with **drop rate** of **50 percent**.               
-The rest of the hyperparameters' setting was the default. 
+Before getting to this model, there were many trials and errors involved to find the best value for early-stop, L1 regularization, learning rate, and drop-out rate for the model.
+
+**The model was modified by**:     
+- Adding the custom loss function that adheres more to the rhythm and harmonic structure of classical music.       
+- Adding the early stop function to make the model stops the training when the loss and accuracy from evaluation set don't improve for a certain number of steps.   
+- Adding L1 regularization to prevent overfitting even more.
+
+**Training details:**  
+**Batch size of 48** was used, with **drop rate** of **50 percent**.   
+The learning rate started at 0.1 and gradually decayed. The rest of the hyperparameters' setting was the default.    
+L1 regularization set at 0.0001.   
+Rhythm and Harmonic Progression loss were used.                
 
 **Changelog:**   
-- For the fine-tuning process of this modified model, I started by setting the early stopping as small value.
-    - If the early stopping was activated and the model was still improving or was underfitting, I would increase the early stop value and started the training again. 
-    - When I found the actual a time span that the model took to improve, I would set the patience to that value approximately.
-        - Early stopping value was defined by "patience" value, which is the number of steps that the early stopping algorithm will tolerate before stopping the training when it sees that both accuracy and loss from the evaluation set aren't improving anymore.
-- I started by setting the patience value to 27.
-- The early stop activated around 200 steps. The model was still improving, so I started the training again with a patience value set to 270.
-- The early stop activated at around 520 steps, and the model was still improving, so I started the training again with patience set to 540.
-- The early stop activated at around 1,100 steps, but the model was underfitting, so I started the training again with patience set to 1,080.
-- The early stop activated at around 4,000 steps, and the model was improving, so I started again with patience set to 2,160.
-- The early stop activated at around 8,940 steps, and the model's performance seemed to stall in terms of accuracy in evaluation set, but the loss was still improving. 
-- I found that the model took around 2,000 steps to improve for both accuracy and loss, so I started the training again with the same patience value.
-- The early stop activated at around 11,500 steps. The loss and accuracy was improving very subtly. I decided to continue the training with the same patience value.
-    
+- This model involved manual learning rate decay by multiplying 0.1 to the current learning rate. The learning rate was decreased everytime after the early-stop activated.
+- This model started with the learning rate at 0.1
+
 ## List of Modified files
 - **events_rnn_train.py**
     - **Implemented early stopping**
@@ -66,7 +64,7 @@ The rest of the hyperparameters' setting was the default.
             - "patience" is the number of steps that the early stopping algorithm will tolerate when it sees that both accuracy and loss from the evaluation set aren't improving anymore.
                 - So if you want the algorithm to tolerate for 1,000 steps when the loss and accuracy of the evaluation set aren't improved before  stopping the training, you can set the "patience" to 1,000.           
             - the "patience" need to be set if you want to use early stopping. 
-            - To enable Early stopping, use this following command line:     
+            - To enable Early stopping, this following command line is an example:     
                 ```
                 --early_stop='patience=1000' \
                 ``` 
@@ -83,9 +81,10 @@ The rest of the hyperparameters' setting was the default.
                 ``` 
     - **Added L1 Regularization**
         - Added **L1 Regularization** on top of the original loss function.  
-            - To enable L1 Regularization, use this following command line:     
+            - To enable L1 Regularization, set the scale value to more than 0. If set to 0, the L1 Regularization won't be used.
+            - To enable L1 Regularization, this following command line is an example:     
                 ```
-                --l1_regular \
+                --l1_regular=0.001 \
                 ```   
 - **performance_rnn_train.py**
     - Added command line flags for Early Stopping, Rhythm Loss, Harmonic Progression Loss, and L1 Regularization, so they can be controlled manually.
