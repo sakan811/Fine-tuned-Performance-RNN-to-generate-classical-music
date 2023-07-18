@@ -47,14 +47,18 @@ Before getting to this model, there were many trials and errors involved to find
 - Adding L1 regularization to prevent overfitting even more.
 
 **Training details:**  
-**Batch size of 48** was used, with **drop rate** of **50 percent**.   
-The learning rate started at 0.01 and gradually decayed. The rest of the hyperparameters' setting was the default.    
-L1 regularization set at 0.0001.   
-Rhythm and Harmonic Progression loss were used.                
+**Batch size of 48** was used, with **drop rate** of **50 percent**. 
+This model involved manual cyclical learning rate.      
+The learning rate upper-bound was 0.01 as it was the highest value so far that didn't make the model too unstable.   
+The learning rate lower-bound was 0.0000001 as it was the point that the model was stall.    
+The rest of the hyperparameters' setting was the default.          
+L1 regularization set at 0.0001.       
+Rhythm and Harmonic Progression loss were used.                    
 
 **Changelog:**   
-- This model involved manual learning rate decay. 
-- The decay rate is equal to multiplying the current value by 0.1. The learning rate was decreased everytime after the early-stop activated.
+- The learning rate started at 0.01, and then gradually decayed until 0.0000001. After that the learning gradually increased until it went back to the original value, and then the process repeat. 
+- The learning rate decay is equal to multiplying the current value by 0.1, and the growth rate is equal to dividing the current value by 0.1. 
+- The learning rate was decreased or increased everytime after the early-stop activated.
 
 
 ## List of Modified files
