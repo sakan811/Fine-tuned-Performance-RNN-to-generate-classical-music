@@ -48,13 +48,14 @@ Before getting to this model, there were many trials and errors involved to find
 
 **Training details:**  
 **Batch size of 48** was used, with **drop rate** of **50 percent**.   
-The learning rate started at 0.1 and gradually decayed. The rest of the hyperparameters' setting was the default.    
+The learning rate started at 0.01 and gradually decayed. The rest of the hyperparameters' setting was the default.    
 L1 regularization set at 0.0001.   
 Rhythm and Harmonic Progression loss were used.                
 
 **Changelog:**   
-- This model involved manual learning rate decay by multiplying 0.1 to the current learning rate. The learning rate was decreased everytime after the early-stop activated.
-- This model started with the learning rate at 0.1
+- This model involved manual learning rate decay. 
+- The decay rate is equal to multiplying the current value by 0.1. The learning rate was decreased everytime after the early-stop activated.
+
 
 ## List of Modified files
 - **events_rnn_train.py**
