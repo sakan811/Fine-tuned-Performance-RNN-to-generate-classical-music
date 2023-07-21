@@ -41,24 +41,30 @@ The rest of the hyperparameters' setting was the default.
 
 Before getting to this model, there were many trials and errors involved to find the best value for early-stop, L1 regularization, learning rate, and drop-out rate for the model.
 
+Lower-bound and upper-bound for cyclical learning rate were found from my trial-and-error experimentation while finding the best value for learning rate.
+
 **The model was modified by**:     
 - Adding the custom loss function that adheres more to the rhythm and harmonic structure of classical music.       
 - Adding the early stop function to make the model stops the training when the loss and accuracy from evaluation set don't improve for a certain number of steps.   
 - Adding L1 regularization to prevent overfitting even more.
+- Adding Cyclical Learning Rate to help mamanging learning rate.
 
 **Training details:**  
 **Batch size of 48** was used, with **drop rate** of **50 percent**. 
-This model involved manual cyclical learning rate.      
-The learning rate upper-bound was 0.01 as it was the highest value so far that didn't make the model too unstable.   
-The learning rate lower-bound was 0.0000001 as it was the point that the model was stall.    
+This model involved cyclical learning rate.      
+The learning rate upper-bound was originally set at 0.01, as it was the highest possible value that the script didn't raise NaN value error.    
+After training for a while, the upper-bound was decreased to 0.001.     
+The learning rate lower-bound was set at 0.000001, as it was the lowest possible value that the model didn't become completely stall. 
 The rest of the hyperparameters' setting was the default.          
 L1 regularization set at 0.0001.       
 Rhythm and Harmonic Progression loss were used.                    
+Early-stop's patience was set at 2,353, which was equal to 10 epochs. 
+The number of steps the model would train for was set at 23,500 steps for each training loop, which was equal to 100 epochs.
 
-**Changelog:**   
-- The learning rate started at 0.01, and then gradually decayed until 0.0000001. After that the learning gradually increased until it went back to the original value, and then the process repeat. 
-- The learning rate decay is equal to multiplying the current value by 0.1, and the growth rate is equal to dividing the current value by 0.1. 
-- The learning rate was decreased or increased everytime after the early-stop activated.
+**Changelog:** 
+- If the early-stop activated or the model had trained for the number of epochs set, but showed signs of improvement, I continued the training with another training loop, which started with another Cyclinal Learning Rate cycles.  
+- At around 2,700, 5,500, and 8,300 steps, the early-stop activated, but the model was still improving, so I continued the training.
+- At around 11,100 steps, the early-stop activated, but the model was still improving, so I continued the training. This time, I changed the upper-bound value to 0.001, as early-stop always activated after the model was learning with the upper-bound at 0.01 for only around 300 steps.
 
 
 ## List of Modified files
