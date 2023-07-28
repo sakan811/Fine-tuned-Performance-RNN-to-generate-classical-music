@@ -22,12 +22,14 @@ The dataset will be divided into 2 datasets, training, and evaluation, with a ra
 - [Further Use](#further-use)
 
 ## Result of the 1st Iteration (Original Model)
-This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.       
+This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
+The model was trained for around 191,000 steps.        
  
 **Generated Music Samples:**         
-Sample 1: https://drive.google.com/file/d/1ocAQDIHd97JwZlu8Fzm2Q5kIA0v9ypyz/view?usp=drive_link          
-Sample 2: https://drive.google.com/file/d/1wW9zj-_rdiciBiocogSVHwyueCPPhH5e/view?usp=drive_link      
-Sample 3: https://drive.google.com/file/d/1QMzjYR7NLKTzgO3sUvZSSIaYbZwH5kc9/view?usp=drive_link       
+- Sample 1: https://drive.google.com/file/d/1QzRQGdM1Xrz06SBvFDHjB2tvfqCOmLkQ/view?usp=sharing          
+- Sample 2: https://drive.google.com/file/d/1sh3sMlHLHRtKav0iVs6fUEOBeTwspeH_/view?usp=sharing      
+- Sample 3: https://drive.google.com/file/d/1xUncQSNSoyaA13ny0EP-qPmOKZGzYr9z/view?usp=sharing    
+    - All of these generated with the parameter num_steps set at 6000.
   
 **Training details:**        
 **Batch size of 48** was used, with **drop rate** of **50 percent**.    
@@ -38,33 +40,55 @@ The rest of the hyperparameters' setting was the default.
 - At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.   
   
 ## Result of the 2nd Iteration (1st Modified Model)
-
-Before getting to this model, there were many trials and errors involved to find the best value for early-stop, L1 regularization, learning rate, and drop-out rate for the model.
-
-Lower-bound and upper-bound for cyclical learning rate were found from my trial-and-error experimentation while finding the best value for learning rate.
+This is the modified pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
+The model was trained for around 21,500 steps. 
 
 **The model was modified by**:     
-- Adding the custom loss function that adheres more to the rhythm and harmonic structure of classical music.       
+- Adding the custom loss function to make the model adheres more to the rhythm and harmonic structure of classical music.       
 - Adding the early stop function to make the model stops the training when the loss and accuracy from evaluation set don't improve for a certain number of steps.   
 - Adding L1 regularization to prevent overfitting even more.
 - Adding Cyclical Learning Rate to help mamanging learning rate.
 
+**Generated Music Samples:**         
+- Sample 1: https://drive.google.com/file/d/1E3OvoqPDBpIv4dFDYtTYxYzIsVlgInUw/view?usp=sharing         
+- Sample 2: https://drive.google.com/file/d/1yw-3sFvoxXf3xpWxu5eRVxaNiELAwjTX/view?usp=sharing    
+- Sample 3: https://drive.google.com/file/d/1j89FbKVJDmBdSJlUE7Q_bM89SV0ZbKKP/view?usp=sharing   
+    - All of these generated with the parameter num_steps set at 6000 and temperature set at 1.1.
+
+**Abbreviation**
+- LR (Learning Rate)
+- CLR (Cyclical Learning Rate)
+- L1 (L1 Regularization)
+- RL (Rhythm Loss)
+- HPL (Harmonic Progression Loss)
+
 **Training details:**  
-**Batch size of 48** was used, with **drop rate** of **50 percent**. 
-This model involved cyclical learning rate.      
-The learning rate upper-bound was originally set at 0.01, as it was the highest possible value that the script didn't raise NaN value error.    
-After training for a while, the upper-bound was decreased to 0.001.     
-The learning rate lower-bound was set at 0.000001, as it was the lowest possible value that the model didn't become completely stall. 
-The rest of the hyperparameters' setting was the default.          
-L1 regularization set at 0.0001.       
-Rhythm and Harmonic Progression loss were used.                    
-Early-stop's patience was set at 2,353, which was equal to 10 epochs. 
-The number of steps the model would train for was set at 23,500 steps for each training loop, which was equal to 100 epochs.
+- **Batch size of 48** was used, with **drop rate** of **50 percent**. 
+- This model involved CLR.      
+    - The maximum LR was 0.001, as higher value would make the loss exploded.          
+    - The minimum LR was 0.00025, as it was the 1/4 of the maximum LR.   
+    - So the lower-bound was 0.00025, and the upper-bound was 0.001. 
+    - The number of steps for each half-cycle in CLR was 470, which is 2 times of the number of iterations for each epoch.   
+- L1 scale was set to 0.0001.            
+- RL and HPL were used.
+    - These were additional loss fuction built on top of the existing one.  
+    - The weight was set at 0.5 for both.  
+- Early-stop's patience was set at 4,700, which was equal to 20 epochs.                   
+    - Originally, early-stop's patience was set at 2,350, which was equal to 10 epochs.    
+- The rest of the hyperparameters' setting was the default.   
+
+Before getting to this model, there were many trials and errors involved to find the best value for early-stop, L1, LR, drop-out rate, RL and HPL's weights, and temperature for the model.     
+
+The lower-bound and upper-bound for CLR were set based on the rule recommended by the "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith that said we could find the best learning rate range for CLR by finding the maximum LR that made the model converge and set the minimum LR to be 1/3 or 1/4 of the maximum LR.
+
+The research also suggested about finding the right step size for CLR, which was the 2 - 10 times of the number of iterations of an epoch.
+
+The maximum LR were found during my trial-and-error experimentation to find the best LR.
 
 **Changelog:** 
-- If the early-stop activated or the model had trained for the number of epochs set, but showed signs of improvement, I continued the training with another training loop, which started with another Cyclinal Learning Rate cycles.  
-- At around 2,700, 5,500, and 8,300 steps, the early-stop activated, but the model was still improving, so I continued the training.
-- At around 11,100 steps, the early-stop activated, but the model was still improving, so I continued the training. This time, I changed the upper-bound value to 0.001, as early-stop always activated after the model was learning with the upper-bound at 0.01 for only around 300 steps.
+- If the early-stop activated, but the model showed signs of improvement, I continued the training with another training loop, which started with another CLR cycles. 
+- At around 4,000 steps, the early-stop activated, but I saw the potential that the model could improve, so I continued the training and doubled the patience value.
+- At around 21,500 steps, the early-stop activated. 
 
 
 ## List of Modified files
@@ -95,12 +119,16 @@ The number of steps the model would train for was set at 23,500 steps for each t
             - To enable L1 Regularization, set the scale value to more than 0. If set to 0, the L1 Regularization won't be used.
             - To enable L1 Regularization, this following command line is an example:     
                 ```
-                --l1_regular=0.001 \
+                --l1_regular='0.001' \
                 ```   
+    - **Added Cyclical Learning Rate**  
+        - To enable **Cyclical Learning Rate**, set the value for lower-bound, upper-bound, and step size.   
+        - This following command line is an example:        
+                ```  
+                --clr_hparams='lower_bound=0.00025,upper_bound=0.001,step_size=470' \   
+                ```     
 - **performance_rnn_train.py**
-    - Added command line flags for Early Stopping, Rhythm Loss, Harmonic Progression Loss, and L1 Regularization, so they can be controlled manually.
-    - Added the **parse_early_stopping_params** function to parse a string containing Early Stopping parameters.
-    - Modified the **main** function so that the flags and the added function can work properly.
+    - Added command line flags for Early Stopping, Rhythm Loss, Harmonic Progression Loss, L1 Regularization, and Cyclical Learning Rate, so they can be controlled manually.
 
 ## Further Use
 You can look at this page for the tutorial on how to use the Performance RNN   
