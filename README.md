@@ -50,10 +50,10 @@ The model was trained for around 21,500 steps.
 - Adding Cyclical Learning Rate to help mamanging learning rate.
 
 **Generated Music Samples:**         
-- Sample 1: https://drive.google.com/file/d/1E3OvoqPDBpIv4dFDYtTYxYzIsVlgInUw/view?usp=sharing         
-- Sample 2: https://drive.google.com/file/d/1yw-3sFvoxXf3xpWxu5eRVxaNiELAwjTX/view?usp=sharing    
-- Sample 3: https://drive.google.com/file/d/1j89FbKVJDmBdSJlUE7Q_bM89SV0ZbKKP/view?usp=sharing   
-    - All of these generated with the parameter num_steps set at 6000 and temperature set at 1.1.
+- Sample 1: https://drive.google.com/file/d/1fjUI6lVJegdN8QacCVUb14jk-cmBhvpY/view?usp=sharing       
+- Sample 2: https://drive.google.com/file/d/1NJzaEjIysItNRboGO1cEF1cewlCYxsYE/view?usp=sharing   
+- Sample 3: https://drive.google.com/file/d/1bVGBCh7x2QYdFluxvD5_9wO6VeCGd71f/view?usp=sharing 
+    - All of these generated with the parameter num_steps set at 6000.
 
 **Abbreviation**
 - LR (Learning Rate)
@@ -77,7 +77,7 @@ The model was trained for around 21,500 steps.
     - Originally, early-stop's patience was set at 2,350, which was equal to 10 epochs.    
 - The rest of the hyperparameters' setting was the default.   
 
-Before getting to this model, there were many trials and errors involved to find the best value for early-stop, L1, LR, drop-out rate, RL and HPL's weights, and temperature for the model.     
+Before getting to this model, there were many trials and errors involved to find the best value for early-stop, L1, LR, drop-out rate, and RL and HPL's weights for the model.     
 
 The lower-bound and upper-bound for CLR were set based on the rule recommended by the "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith that said we could find the best learning rate range for CLR by finding the maximum LR that made the model converge and set the minimum LR to be 1/3 or 1/4 of the maximum LR.
 
