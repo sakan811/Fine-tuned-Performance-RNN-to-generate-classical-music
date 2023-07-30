@@ -94,10 +94,10 @@ The maximum LR were found during my trial-and-error experimentation to find the 
 ## List of Modified files
 - **events_rnn_train.py**
     - **Implemented early stopping**
-        - Early stopping takes the accuracy and loss from evaluation set to determine when the training should stop.
+        - Early stopping takes the loss from evaluation set to determine when the training should stop.
         - You can set the "patience" value.
-            - "patience" is the number of steps that the early stopping algorithm will tolerate when it sees that both accuracy and loss from the evaluation set aren't improving anymore.
-                - So if you want the algorithm to tolerate for 1,000 steps when the loss and accuracy of the evaluation set aren't improved before  stopping the training, you can set the "patience" to 1,000.           
+            - "patience" is the number of steps that the early stopping algorithm will tolerate when it sees that loss from the evaluation set aren't improving anymore.
+                - So if you want the algorithm to tolerate for 1,000 steps when the loss of the evaluation set aren't improved before stopping the training, you can set the "patience" to 1,000.           
             - the "patience" need to be set if you want to use early stopping. 
             - To enable Early stopping, this following command line is an example:     
                 ```
@@ -128,7 +128,7 @@ The maximum LR were found during my trial-and-error experimentation to find the 
                 --clr_hparams='lower_bound=0.00025,upper_bound=0.001,step_size=470' \   
                 ```     
 - **performance_rnn_train.py**
-    - Added command line flags for Early Stopping, Rhythm Loss, Harmonic Progression Loss, L1 Regularization, and Cyclical Learning Rate, so they can be controlled manually.
+    - Added command line flags for the added functions, so they can be controlled manually.
 
 ## Further Use
 You can look at this page for the tutorial on how to use the Performance RNN   
