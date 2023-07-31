@@ -65,8 +65,8 @@ The model was trained for around 21,500 steps.
 **Training details:**  
 - **Batch size of 48** was used, with **drop rate** of **50 percent**. 
 - This model involved CLR.      
-    - The maximum LR was 0.001, as higher value would make the loss exploded.          
-    - The minimum LR was 0.00025, as it was the 1/4 of the maximum LR.   
+    - At first, I set the maximum LR to be 0.001 and the minimum LR to be 0.0001, following the rule from research by Leslie N. Smith.     
+    - Later I changed the minimum LR was 0.00025, which was the 1/4 of the maximum LR, following another rule from research, as the above method didn't work well for the model.
     - So the lower-bound was 0.00025, and the upper-bound was 0.001. 
     - The number of steps for each half-cycle in CLR was 470, which is 2 times of the number of iterations for each epoch.   
 - L1 scale was set to 0.0001.            
@@ -79,7 +79,7 @@ The model was trained for around 21,500 steps.
 
 Before getting to this model, there were many trials and errors involved to find the best value for early-stop, L1, LR, drop-out rate, and RL and HPL's weights for the model.     
 
-The lower-bound and upper-bound for CLR were set based on the rule recommended by the "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith that said we could find the best learning rate range for CLR by finding the maximum LR that made the model converge and set the minimum LR to be 1/3 or 1/4 of the maximum LR.
+The lower-bound and upper-bound for CLR were set based on the rules recommended by the "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith. There are 2 rules from the research, but for this model, I used the rule that said we could find the best learning rate range for CLR by finding the maximum LR that made the model converge and set the minimum LR to be 1/3 or 1/4 of the maximum LR.
 
 The research also suggested about finding the right step size for CLR, which was the 2 - 10 times of the number of iterations of an epoch.
 
