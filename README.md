@@ -65,8 +65,8 @@ The model was trained for around 21,500 steps.
 **Training details:**  
 - **Batch size of 48** was used, with **drop rate** of **50 percent**. 
 - This model involved CLR.      
-    - At first, I set the maximum LR to be 0.001 and the minimum LR to be 0.0001, following the rule from research by Leslie N. Smith.     
-    - Later I changed the minimum LR was 0.00025, which was the 1/4 of the maximum LR, following another rule from research, as the above method didn't work well for the model.
+    - At first, I set the maximum LR to be 0.001 and the minimum LR to be 0.0001, following the rule about finding the best LR range from research by Leslie N. Smith.     
+    - Later I changed the minimum LR was 0.00025, which was the 1/4 of the maximum LR, adapting another rule from research, as the above method didn't work well for the model.
     - So the lower-bound was 0.00025, and the upper-bound was 0.001. 
     - The number of steps for each half-cycle in CLR was 470, which is 2 times of the number of iterations for each epoch.   
 - L1 scale was set to 0.0001.            
