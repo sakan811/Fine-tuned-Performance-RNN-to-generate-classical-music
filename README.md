@@ -17,11 +17,12 @@ The rest was from Aligned Scores and Performances (ASAP) dataset: https://github
 The dataset will be divided into 2 datasets, training, and evaluation, with a ratio of 90:10.    
 
 ## Table of Contents
-- [Result of the 1st Iteration (Original Model)](#result-original-model)
-- [Result of the 2nd Iteration (1st Modified Model)](#result-modified-model)
+- [Result of the 1st Iteration](#result-original-model)
+- [Result of the 2nd Iteration](#result-modified-model)
+- [Result of the 3rd Iteration](#result-modified-model)
 - [Further Use](#further-use)
 
-## Result of the 1st Iteration (Original Model)
+## Result of the 1st Iteration 
 This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
 The model was trained for around 191,000 steps.        
  
@@ -39,7 +40,7 @@ The rest of the hyperparameters' setting was the default.
 - At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.  
 - At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.   
   
-## Result of the 2nd Iteration (1st Modified Model)
+## Result of the 2nd Iteration
 This is the modified pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
 The model was trained for around 21,500 steps. 
 
@@ -65,7 +66,7 @@ The model was trained for around 21,500 steps.
 **Training details:**  
 - **Batch size of 48** was used, with **drop rate** of **50 percent**. 
 - This model involved CLR.      
-    - At first, I set the maximum LR to be 0.001 and the minimum LR to be 0.0001, following the rule about finding the best LR range from research by Leslie N. Smith.     
+    - At first, I set the maximum LR to be 0.001 and the minimum LR to be 0.0001, adapting the rule about finding the best LR range from research by Leslie N. Smith.     
     - Later I changed the minimum LR was 0.00025, which was the 1/4 of the maximum LR, adapting another rule from research, as the above method didn't work well for the model.
     - So the lower-bound was 0.00025, and the upper-bound was 0.001. 
     - The number of steps for each half-cycle in CLR was 470, which is 2 times of the number of iterations for each epoch.   
@@ -89,6 +90,17 @@ The maximum LR were found during my trial-and-error experimentation to find the 
 - If the early-stop activated, but the model showed signs of improvement, I continued the training with another training loop, which started with another CLR cycles. 
 - At around 4,000 steps, the early-stop activated, but I saw the potential that the model could improve, so I continued the training and doubled the patience value.
 - At around 21,500 steps, the early-stop activated. 
+
+## Result of the 3rd Iteration 
+
+**Training details:** 
+- Use a new config: multiconditioned_performance_with_dynamics_compact
+    - It's a new config added by me to overcome the problem of a large size of SequenceExamples of the config multiconditioned_performance_with_dynamics
+- Early-stop's patience was originally set at 2340.
+
+**Changelog:** 
+- The early-stop activated at around 5,800 steps but the model showed signs of improvement, I continued the training and doubled up the patience.
+- The early-stop activated at around 13,100 steps but the model showed signs of improvement, I continued the training and doubled up the patience.
 
 
 ## List of Modified files
@@ -127,8 +139,23 @@ The maximum LR were found during my trial-and-error experimentation to find the 
                 ```  
                 --clr_hparams='lower_bound=0.00025,upper_bound=0.001,step_size=470' \   
                 ```     
-- **performance_rnn_train.py**
-    - Added command line flags for the added functions, so they can be controlled manually.
+- **performance_rnn_create_dataset.py**
+    - Added a flag to set the compression when creating TFRecord.
+            ```  
+            performance_rnn_create_dataset \
+            --config='multiconditioned_performance_with_dynamics' \
+            --input='PATH_TO_YOUR_NOTESEQUENCES.TFRECORD' \
+            --output_dir='PATH_TO_YOUR_OUTPUT_DIRECTORY' \
+            --eval_ratio=0.1 \
+            --use_compression
+            ```   
+
+- **pipeline.py**
+    - Added compression for TFRecordWriter when the flag is set.
+
+- **data.py**
+    - Added a way to handle compressed TFRecord.
+
 
 ## Further Use
 You can look at this page for the tutorial on how to use the Performance RNN   
