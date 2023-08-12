@@ -10,7 +10,7 @@ The project involved 3 iteration processes that involved model modifications and
 ## Training
 All of the models used are pre-trained models.     
 
-The models were fed with 1329 MIDI and MusicXML files in total.     
+The models were fed with 1342 MIDI and MusicXML files in total.     
 40 MusicXML files were from Musescore and they are all public domain.   
 The rest was from Aligned Scores and Performances (ASAP) dataset: https://github.com/fosfrancesco/asap-dataset    
      
