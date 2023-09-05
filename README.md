@@ -10,7 +10,7 @@ The project involved 3 iteration processes that involved model modifications and
 ## Training
 All of the models used are pre-trained models.     
 
-The models were fed with 1329 MIDI and MusicXML files in total.     
+The models were fed with 1,342 MIDI and MusicXML files in total.     
 40 MusicXML files were from Musescore and they are all public domain.   
 The rest was from Aligned Scores and Performances (ASAP) dataset: https://github.com/fosfrancesco/asap-dataset    
      
@@ -91,16 +91,41 @@ The maximum LR were found during my trial-and-error experimentation to find the 
 - At around 4,000 steps, the early-stop activated, but I saw the potential that the model could improve, so I continued the training and doubled the patience value.
 - At around 21,500 steps, the early-stop activated. 
 
+
 ## Result of the 3rd Iteration 
+This is the modified pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
+The final model was trained for around 1,958 steps. 
+
+**Generated Music Samples:**         
+- Sample 1:       
+- Sample 2: 
+- Sample 3: 
+    - All of these generated with the parameter num_steps set at 6000, the rest was default.
+    - Sample 1 was set the pitch_class_histogram to the key of C Major.
+    - Sample 2 was set the pitch_class_histogram to the key of D Major.
+    - Sample 3 was set the pitch_class_histogram to the key of D Minor.
+
+**Abbreviation**
+- RL (Rhythm Loss)
+- HTL (Harmonic Tension Loss)
+- CLR (Cyclical Learning Rate)
+- ER (Early-stop)
 
 **Training details:** 
-- Use a new config: multiconditioned_performance_with_dynamics_compact
-    - It's a new config added by me to overcome the problem of a large size of SequenceExamples of the config multiconditioned_performance_with_dynamics
-- Early-stop's patience was originally set at 2340.
+- Using the config 'multiconditioned_performance_with_dynamics'
+- 128 batch size. 
+- Drop-out rate 20%
+- RL's weight: 0.25
+- HTL's weight: 0.25
+- CLR's upper-bound and lower-bound at 0.000001 and 0.01. step size was at 180.
+- ER's patience was set at 900.
+
+I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Prechelt, which stated that using the Early-stop in Generalization Loss class was to run the model for several runs and picked the one with the best valiadation loss. The model that stopped by early stopping at around 1,958 steps had the best validation loss.
 
 **Changelog:** 
-- The early-stop activated at around 5,800 steps but the model showed signs of improvement, I continued the training and doubled up the patience.
-- The early-stop activated at around 13,100 steps but the model showed signs of improvement, I continued the training and doubled up the patience.
+- The early-stop activated at around 1,060 steps. 
+- The early-stop activated at around 1,958 steps. 
+- The early-stop activated at around 2,859 steps. 
 
 
 ## List of Modified files
