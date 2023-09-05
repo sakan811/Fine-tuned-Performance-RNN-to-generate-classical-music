@@ -97,9 +97,9 @@ This is the modified pre-trained Performance RNN model that was fine-tuned with 
 The final model was trained for around 1,958 steps. 
 
 **Generated Music Samples:**         
-- Sample 1:       
-- Sample 2: 
-- Sample 3: 
+- Sample 1: https://drive.google.com/file/d/1HsaVQZ4Ul0HDjOEc7sGTLs7t9ms-_Pzw/view?usp=drive_link       
+- Sample 2: https://drive.google.com/file/d/1jQ0sdTkrAQOWHrIjRi_PGOpa90X7stsS/view?usp=drive_link
+- Sample 3: https://drive.google.com/file/d/1ndtk-lUuez7I7oKverEaWbQISco6CmgJ/view?usp=drive_link
     - All of these generated with the parameter num_steps set at 6000, the rest was default.
     - Sample 1 was set the pitch_class_histogram to the key of C Major.
     - Sample 2 was set the pitch_class_histogram to the key of D Major.
