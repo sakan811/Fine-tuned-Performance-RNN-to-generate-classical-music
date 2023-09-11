@@ -142,12 +142,12 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
                 ``` 
 - **events_rnn_graph.py**
     - **Modified the loss function**
-        - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
-            - To enable Rhythm loss, use the following command line:     
+        - Added **Rhythm loss** and **Harmonic Tension Loss** on top of the original loss function.    
+            - To enable Rhythm Loss, use the following command line:     
                 ```
                 --rhythm_loss \
                 ``` 
-            - To enable Harmonic progression loss, use the following command line:     
+            - To enable Harmonic Tension Loss, use the following command line:     
                 ```
                 --harmony_loss \
                 ``` 
