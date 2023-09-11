@@ -123,9 +123,9 @@ The final model was trained for around 1,958 steps.
 I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Prechelt, which stated that using the Early-stop in Generalization Loss class was to run the model for several runs and picked the one with the best valiadation loss. The model that stopped by early stopping at around 1,958 steps had the best validation loss.
 
 **Changelog:** 
-- The early-stop activated at around 1,060 steps. 
-- The early-stop activated at around 1,958 steps. 
-- The early-stop activated at around 2,859 steps. 
+- The early-stop activated at around 1,060 steps. The evaluation loss could still be improved. I continued the training.
+- The early-stop activated at around 1,958 steps. The evaluation loss could still be improved. I continued the training.
+- The early-stop activated at around 2,859 steps. The evaluation loss didn't improve anymore.
 
 
 ## List of Modified files
@@ -141,15 +141,15 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
                 --early_stop='patience=1000' \
                 ``` 
 - **events_rnn_graph.py**
-    - **Modified the loss function**
-        - Added **Rhythm loss** and **Harmonic progression loss** on top of the original loss function.    
-            - To enable Rhythm loss, use this following command line:     
+    - **Added more loss functions**
+        - Added **Rhythm Loss** and **Harmonic Tension Loss** on top of the original loss function. The weight can be set.    
+            - To enable Rhythm loss, use this following command line as an example:     
                 ```
-                --rhythm_loss \
+                --rhythm_loss=0.5 \
                 ``` 
-            - To enable Harmonic progression loss, use this following command line:     
+            - To enable Harmonic progression loss, use this following command line as an example:     
                 ```
-                --harmony_loss \
+                --harmony_loss=0.5 \
                 ``` 
     - **Added L1 Regularization**
         - Added **L1 Regularization** on top of the original loss function.  
@@ -161,11 +161,15 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
     - **Added Cyclical Learning Rate**  
         - To enable **Cyclical Learning Rate**, set the value for lower-bound, upper-bound, and step size.   
         - This following command line is an example:        
-                ```  
-                --clr_hparams='lower_bound=0.00025,upper_bound=0.001,step_size=470' \   
-                ```     
+            ```  
+            --clr_hparams='lower_bound=0.00025,upper_bound=0.001,step_size=470' \   
+            ```     
 - **performance_rnn_create_dataset.py**
     - Added a flag to set the compression when creating TFRecord.
+        ```
+        --use_compression \
+        ``` 
+        - This is an example:  
             ```  
             performance_rnn_create_dataset \
             --config='multiconditioned_performance_with_dynamics' \
@@ -180,6 +184,9 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
 
 - **data.py**
     - Added a way to handle compressed TFRecord.
+
+- **sequence_example_lib.py**
+    - Modified count_records to handle compression.
 
 
 ## Further Use
