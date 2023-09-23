@@ -1,17 +1,22 @@
 # Modify and Fine-tune Performance RNN to Generate Classical Music
 
-This is my research project for one of the modules I'm taking for my Master's degree.     
-I might continue with this further, even though my research project finishes.
+This is my MSc dissertation project.       
 
-My goal is to create another version of Performance RNN that can generate classical music that sounds close to human-composed classical music.
+This project was to fine-tune Performance RNN to generate classical music with a "human-like" quality.   
 
-The project involved 3 iteration processes that involved model modifications and fine-tuning processes.
+A "human-like" quality is the qualities that we see in a Human-Composed music, such as "a clear tonality", "a clear chord progression", and "a good sense of rhythm".    
+
+Performance RNN was already trained with classical music, but I thought that the generated classical music still lacked that "human-like" quality.   
+
+I aimed to fine-tune the model further with more classical music to enhance its performance.   
+
+The project involved 3 iterative processes that involved model scripts modifications and fine-tuning processes.  
 
 ## Training
-All of the models used are pre-trained models.     
+All of the models used are pre-trained Performance RNN models.     
 
-The models were fed with 1,342 MIDI and MusicXML files in total.     
-40 MusicXML files were from Musescore and they are all public domain.   
+The models were trained with 1,342 MIDI and MusicXML files in total.     
+40 MusicXML files were from Musescore.com and they are all public domain.   
 The rest was from the Aligned Scores and Performances (ASAP) dataset: https://github.com/fosfrancesco/asap-dataset    
      
 The dataset will be divided into 2 datasets, training, and evaluation, with a ratio of 90:10.    
@@ -20,10 +25,10 @@ The dataset will be divided into 2 datasets, training, and evaluation, with a ra
 - [Result of the 1st Iteration](#result-original-model)
 - [Result of the 2nd Iteration](#result-modified-model)
 - [Result of the 3rd Iteration](#result-modified-model)
-- [Further Use](#further-use)
+- [Tutorial](#tutorial)
 
 ## Result of the 1st Iteration 
-This is the original pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
+This is the original pre-trained Performance RNN model that was fine-tuned more classical music dataset.     
 The model was trained for around 191,000 steps.        
  
 **Generated Music Samples:**         
@@ -41,7 +46,7 @@ The rest of the hyperparameters' setting was the default.
 - At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.   
   
 ## Result of the 2nd Iteration
-This is the modified pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
+This is the modified pre-trained Performance RNN model that was fine-tuned with more classical music dataset.     
 The model was trained for around 21,500 steps. 
 
 **The model was modified by**:     
@@ -93,7 +98,7 @@ The maximum LR was found during my trial-and-error experimentation to find the b
 
 
 ## Result of the 3rd Iteration 
-This is the modified pre-trained Performance RNN model that was fine-tuned with the classical music datasets.     
+This is the modified pre-trained Performance RNN model that was fine-tuned with more classical music dataset.     
 The final model was trained for around 1,958 steps. 
 
 **Generated Music Samples:**         
@@ -185,6 +190,10 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
     - Modified count_records to handle compression.
 
 
-## Further Use
+## Tutorial
+I categorized the modified scripts by the original directory it was in the Magenta library.    
+
+To use all the functions I added to the scripts related to Performance RNN, please replace the original scripts with their modified counterparts.   
+
 You can look at this page for the tutorial on how to use the Performance RNN   
 https://github.com/magenta/magenta/tree/main/magenta/models/performance_rnn
