@@ -2,15 +2,15 @@
 
 This is my MSc dissertation project.       
 
-This project was to fine-tune Performance RNN to generate classical music with a "human-like" quality.   
+This project was to improve Performance RNN to generate better classical music with a "human-like" quality.   
 
-A "human-like" quality is the qualities that we see in a Human-Composed music, such as "a clear tonality", "a clear chord progression", and "a good sense of rhythm".    
+A "human-like" quality is the qualities that we see in Human-Composed music, such as "a clear tonality", "a clear chord progression", and "a good sense of rhythm".    
 
 Performance RNN was already trained with classical music, but I thought that the generated classical music still lacked that "human-like" quality.   
 
 I aimed to fine-tune the model further with more classical music to enhance its performance.   
 
-The project involved 3 iterative processes that involved model scripts modifications and fine-tuning processes.  
+The project involved 3 iterative processes that involved model script modifications, fine-tuning, and evaluation processes.  
 
 ## Training
 All of the models used are pre-trained Performance RNN models.     
@@ -22,9 +22,9 @@ The rest was from the Aligned Scores and Performances (ASAP) dataset: https://gi
 The dataset will be divided into 2 datasets, training, and evaluation, with a ratio of 90:10.    
 
 ## Table of Contents
-- [Result of the 1st Iteration](#result-original-model)
-- [Result of the 2nd Iteration](#result-modified-model)
-- [Result of the 3rd Iteration](#result-modified-model)
+- [Result of the 1st Iteration](#result-of-the-1st-iteration)
+- [Result of the 2nd Iteration](#result-of-the-2nd-iteration)
+- [Result of the 3rd Iteration](#result-of-the-3rd-iteration)
 - [Tutorial](#tutorial)
 
 ## Result of the 1st Iteration 
@@ -32,9 +32,9 @@ This is the original pre-trained Performance RNN model that was fine-tuned more 
 The model was trained for around 191,000 steps.        
  
 **Generated Music Samples:**         
-- Sample 1: https://drive.google.com/file/d/1QzRQGdM1Xrz06SBvFDHjB2tvfqCOmLkQ/view?usp=sharing          
-- Sample 2: https://drive.google.com/file/d/1sh3sMlHLHRtKav0iVs6fUEOBeTwspeH_/view?usp=sharing      
-- Sample 3: https://drive.google.com/file/d/1xUncQSNSoyaA13ny0EP-qPmOKZGzYr9z/view?usp=sharing    
+- [Sample 1](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/1st%20model/sample%201.mp3)      
+- [Sample 2](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/1st%20model/sample%202.mp3)     
+- [Sample 3](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/1st%20model/sample%203.mp3)  
     - All of these were generated with the parameter num_steps set at 6000.
   
 **Training details:**        
@@ -56,9 +56,9 @@ The model was trained for around 21,500 steps.
 - Adding Cyclical Learning Rate to help manage learning rate.
 
 **Generated Music Samples:**         
-- Sample 1: https://drive.google.com/file/d/1fjUI6lVJegdN8QacCVUb14jk-cmBhvpY/view?usp=sharing       
-- Sample 2: https://drive.google.com/file/d/1NJzaEjIysItNRboGO1cEF1cewlCYxsYE/view?usp=sharing   
-- Sample 3: https://drive.google.com/file/d/1bVGBCh7x2QYdFluxvD5_9wO6VeCGd71f/view?usp=sharing 
+- [Sample 1](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/2nd%20model/sample%201.mp3)       
+- [Sample 2](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/2nd%20model/sample%202.mp3)   
+- [Sample 3](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/2nd%20model/sample%203.mp3) 
     - All of these were generated with the parameter num_steps set at 6000.
 
 **Abbreviation**
@@ -98,13 +98,13 @@ The maximum LR was found during my trial-and-error experimentation to find the b
 
 
 ## Result of the 3rd Iteration 
-This is the modified pre-trained Performance RNN model that was fine-tuned with more classical music dataset.     
+This is the modified pre-trained Performance RNN model that was fine-tuned with a more classical music dataset.     
 The final model was trained for around 1,958 steps. 
 
 **Generated Music Samples:**         
-- Sample 1: https://drive.google.com/file/d/1HsaVQZ4Ul0HDjOEc7sGTLs7t9ms-_Pzw/view?usp=drive_link       
-- Sample 2: https://drive.google.com/file/d/1jQ0sdTkrAQOWHrIjRi_PGOpa90X7stsS/view?usp=drive_link
-- Sample 3: https://drive.google.com/file/d/1ndtk-lUuez7I7oKverEaWbQISco6CmgJ/view?usp=drive_link
+- [Sample 1](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/3rd%20model/sample%201.mp3)       
+- [Sample 2](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/3rd%20model/sample%202.mp3)
+- [Sample 3](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/3rd%20model/sample%203.mp3)
     - All of these were generated with the parameter num_steps set at 6000, the rest was the default.
     - Sample 1 had the pitch_class_histogram set to the key of C Major.
     - Sample 2 had the pitch_class_histogram set to the key of D Major.
@@ -128,9 +128,9 @@ The final model was trained for around 1,958 steps.
 I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Prechelt, which stated that using the Early-stop in the Generalization Loss class was to run the model for several runs and pick the one with the best validation loss. The model that stopped early stopping at around 1,958 steps had the best validation loss.
 
 **Changelog:** 
-- The early-stop activated at around 1,060 steps. The evaluation loss could still be improved. I continued the training.
-- The early-stop activated at around 1,958 steps. The evaluation loss could still be improved. I continued the training.
-- The early-stop activated at around 2,859 steps. The evaluation loss didn't improve anymore.
+- The early-stop was activated at around 1,060 steps. The evaluation loss could still be improved. I continued the training.
+- The early-stop was activated at around 1,958 steps. The evaluation loss could still be improved. I continued the training.
+- The early-stop was activated at around 2,859 steps. The evaluation loss didn't improve anymore.
 
 
 ## List of Modified files
