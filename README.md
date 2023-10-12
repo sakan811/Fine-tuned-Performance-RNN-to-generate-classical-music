@@ -21,10 +21,20 @@ The rest was from the Aligned Scores and Performances (ASAP) dataset: https://gi
      
 The dataset will be divided into 2 datasets, training, and evaluation, with a ratio of 90:10.    
 
+## Results
+All of the Performance RNN models from this project could not generate classical music with a "human-like" quality as I expected.   
+
+The only things that were successful were 2 functions that I added to the scripts: Early-stop and Cyclical Learning Rate.
+
+Early-stop helps with preventing overfitting, as the original scripts don't provide this function.   
+
+Cyclical Learning Rate helps with saving training times, as stated in "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith.
+
 ## Table of Contents
 - [Result of the 1st Iteration](#result-of-the-1st-iteration)
 - [Result of the 2nd Iteration](#result-of-the-2nd-iteration)
 - [Result of the 3rd Iteration](#result-of-the-3rd-iteration)
+- [List of Modified Files](#list-of-modified-files)
 - [Tutorial](#tutorial)
 
 ## Result of the 1st Iteration 
@@ -42,11 +52,11 @@ The model was trained for around 191,000 steps.
 The rest of the hyperparameters' setting was the default. 
 
 **Changelog:**   
-- At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learns faster.  
+- At around 65,000 steps, the learning rate was changed from 0.001 to 0.002 to make the model learn faster.  
 - At around 71,000 steps, the learning rate was changed back to 0.001 as the model's performance worsened.   
   
 ## Result of the 2nd Iteration
-This is the modified pre-trained Performance RNN model that was fine-tuned with more classical music dataset.     
+This is the modified pre-trained Performance RNN model that was fine-tuned with a more classical music dataset.     
 The model was trained for around 21,500 steps. 
 
 **The model was modified by**:     
@@ -133,7 +143,7 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
 - The early-stop was activated at around 2,859 steps. The evaluation loss didn't improve anymore.
 
 
-## List of Modified files
+## List of Modified Files
 - **events_rnn_train.py**
     - **Implemented early stopping**
         - Early stopping takes the loss from the evaluation set to determine when the training should stop.
