@@ -35,7 +35,7 @@ Cyclical Learning Rate helps with saving training times compared to using the tr
 - [Result of the 2nd Iteration](#result-of-the-2nd-iteration)
 - [Result of the 3rd Iteration](#result-of-the-3rd-iteration)
 - [List of Modified Files](#list-of-modified-files)
-- [Cyclical Learning Rate (CLR) Experiment with Performance RNN ](#cyclical-learning-rate-(clr)-experiment-with-performance-rnn)
+- [Cyclical Learning Rate (CLR) Experiment with Performance RNN ](#cyclical-learning-rate-clr-experiment-with-performance-rnn)
 - [Tutorial](#tutorial)
 
 ## Result of the 1st Iteration 
