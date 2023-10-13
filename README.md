@@ -28,7 +28,7 @@ The only things that were successful were 2 functions that I added to the script
 
 Early-stop helps with preventing overfitting, as the original scripts don't provide this function.   
 
-Cyclical Learning Rate helps with saving training times, as stated in "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith.
+Cyclical Learning Rate helps with saving training times compared to using the traditional fixed learning rate, as stated in "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith.
 
 ## Table of Contents
 - [Result of the 1st Iteration](#result-of-the-1st-iteration)
@@ -141,6 +141,33 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
 - The early-stop was activated at around 1,060 steps. The evaluation loss could still be improved. I continued the training.
 - The early-stop was activated at around 1,958 steps. The evaluation loss could still be improved. I continued the training.
 - The early-stop was activated at around 2,859 steps. The evaluation loss didn't improve anymore.
+  
+## Cyclical Learning Rate (CLR) Experiment with Performance RNN  
+I did an experiment to test if the CLR helps save the training times with Performance RNN by comparing CLR with the fixed learning rate.    
+
+The model that used the CLR had the setting as follows:  
+- Config: multiconditioned_performance_with_dynamics   
+- Training steps: 5,442 steps  
+- Batch size: 88   
+- Dropout rate: 50 percent  
+- Rhythm Loss’s weight (2nd iteration version): 0.5   
+- Harmonic Tension Loss’s weight: 0.5  
+- Early-stop’s patience: 1300   
+- CLR’s minimum learning rate: 0.000001  
+- CLR’s maximum learning rate: 0.01  
+- CLR’s step size: 261  
+    
+The model that used a fixed learning rate had the setting as follows:  
+- Config: multiconditioned_performance_with_dynamics  
+- Training steps: 9,371 steps   
+- Batch size: 88  
+- Dropout rate: 50 percent  
+- Rhythm Loss’s weight (2nd iteration version): 0.5  
+- Harmonic Tension Loss’s weight: 0.5  
+- Early-stop’s patience: 1300  
+- Learning rate: 0.001 (model’s default)   
+
+
 
 
 ## List of Modified Files
@@ -157,7 +184,7 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
                 ``` 
 - **events_rnn_graph.py**
     - **Modified the loss function**
-        - Added **Rhythm loss** and **Harmonic Tension Loss** on top of the original loss function.    
+        - Added **Rhythm Loss** and **Harmonic Tension Loss** on top of the original loss function.    
             - To enable Rhythm Loss, use the following command line:     
                 ```
                 --rhythm_loss=0.5 \
@@ -201,7 +228,7 @@ I followed the suggestion from the paper "Early Stopping - But When?" by Lutz Pr
 
 
 ## Tutorial
-I categorized the modified scripts by the original directory it was in the Magenta library.    
+I categorized the modified scripts by the original directory they were in the Magenta library.    
 
 To use all the functions I added to the scripts related to Performance RNN, please replace the original scripts with their modified counterparts.   
 
