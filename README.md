@@ -35,7 +35,7 @@ Cyclical Learning Rate helps with saving training times compared to using the tr
 - [Result of the 2nd Iteration](#result-of-the-2nd-iteration)
 - [Result of the 3rd Iteration](#result-of-the-3rd-iteration)
 - [List of Modified Files](#list-of-modified-files)
-- [Cyclical Learning Rate (CLR) Experiment with Performance RNN ](#cyclical-learning-rate-(CLR)-experiment-with-performance-rnn)
+- [Cyclical Learning Rate (CLR) Experiment with Performance RNN ](#cyclical-learning-rate-(clr)-experiment-with-performance-rnn)
 - [Tutorial](#tutorial)
 
 ## Result of the 1st Iteration 
@@ -169,12 +169,12 @@ The model that used a fixed learning rate had the setting as follows:
 - Learning rate: 0.001 (model’s default)     
   
 ![CLR Graph](Graphs/clr%20eval%20loss%20experiment.svg) 
-Evaluation Loss of the model using Cyclical Learning Rate
+The graph above is an Evaluation Loss of the model using the Cyclical Learning Rate.
 
 ![Fixed LR Graph](Graphs/fxlr%20eval%20loss%20experiment.svg)    
-Evaluation Loss of the model using Fixed Learning Rate
+The graph above is an Evaluation Loss of the model using a Fixed Learning Rate
 
-It's clear that using CLR is faster than using fixed learning rate to in terms of reaching the same point.    
+It's clear that using CLR is faster than using a fixed learning rate in terms of reaching the same point.    
 
 Using CLR is faster by around 41% compared to using the fixed learning rate.   
 
