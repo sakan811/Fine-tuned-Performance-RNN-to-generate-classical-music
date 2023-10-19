@@ -43,9 +43,9 @@ This is the original pre-trained Performance RNN model that was fine-tuned more 
 The model was trained for around 191,000 steps.        
  
 **Generated Music Samples:**         
-- [Sample 1](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/1st%20model/sample%201.mp3)      
-- [Sample 2](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/1st%20model/sample%202.mp3)     
-- [Sample 3](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/1st%20model/sample%203.mp3)  
+- Sample 1: https://drive.google.com/file/d/1kJpxJz9yiipzbHQDCD2Qw3GKX-TiEDHM/view?usp=sharing     
+- Sample 2: https://drive.google.com/file/d/1qJp1F-WeIYkyByrxkqjhF7ZZYR-oahDd/view?usp=sharing   
+- Sample 3: https://drive.google.com/file/d/1yoD_gwoIU5fHl2p0BgmmAqqygCqE4ISj/view?usp=sharing  
     - All of these were generated with the parameter num_steps set at 6000.
   
 **Training details:**        
@@ -67,10 +67,10 @@ The model was trained for around 21,500 steps.
 - Adding Cyclical Learning Rate to help manage learning rate.
 
 **Generated Music Samples:**         
-- [Sample 1](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/2nd%20model/sample%201.mp3)       
-- [Sample 2](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/2nd%20model/sample%202.mp3)   
-- [Sample 3](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/2nd%20model/sample%203.mp3) 
-    - All of these were generated with the parameter num_steps set at 6000.
+- Sample 1: https://drive.google.com/file/d/17KAQ0eBqgtGidf5aJIJb0qvtZco1Do-B/view?usp=share_link           
+- Sample 2: https://drive.google.com/file/d/12ysZgJcLwxQpXaHqsHUS4H25r0VfegKp/view?usp=sharing   
+- Sample 3: https://drive.google.com/file/d/1MHW0Fk2dZrB9pAENuA4KK6NnajQyY4T7/view?usp=sharing   
+    - All of these were generated with the parameter num_steps set at 6000.   
 
 **Abbreviation**
 - LR (Learning Rate)
@@ -113,9 +113,9 @@ This is the modified pre-trained Performance RNN model that was fine-tuned with 
 The final model was trained for around 1,958 steps. 
 
 **Generated Music Samples:**         
-- [Sample 1](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/3rd%20model/sample%201.mp3)       
-- [Sample 2](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/3rd%20model/sample%202.mp3)
-- [Sample 3](https://github.com/sakan811/Modify-and-fine-tune-Performance-RNN-to-Generate-Classical-Music/blob/main/Generated%20Samples%20(Unquantized)/3rd%20model/sample%203.mp3)
+- Sample 1: https://drive.google.com/file/d/1KdpRDLyrl01uPRiNUP_G-LRulnigZe6J/view?usp=sharing   
+- Sample 2: https://drive.google.com/file/d/1Dko32o5i4izazB4rJaNWpG5D3iSi6T8y/view?usp=sharing  
+- Sample 3: https://drive.google.com/file/d/12w3Q4BiFBfLa1n6RzlQBK-cFGy37nRQo/view?usp=sharing  
     - All of these were generated with the parameter num_steps set at 6000, the rest was the default.
     - Sample 1 had the pitch_class_histogram set to the key of C Major.
     - Sample 2 had the pitch_class_histogram set to the key of D Major.
