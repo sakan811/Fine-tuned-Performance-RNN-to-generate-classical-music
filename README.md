@@ -1,4 +1,4 @@
-# Modify and Fine-tune Performance RNN to Generate Classical Music
+# MSc Dissertation Project: Computer Generated Music
 
 This is my MSc dissertation project.       
 
