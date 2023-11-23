@@ -1,8 +1,5 @@
 # MSc Dissertation Project: Computer Generated Music
-
-This is my MSc dissertation project.       
-
-This project was to improve Performance RNN to generate better classical music with a "human-like" quality.   
+This project aimed to improve Performance RNN to generate better classical music with a "human-like" quality.   
 
 A "human-like" quality is the qualities that we see in Human-Composed music, such as "a clear tonality", "a clear chord progression", and "a good sense of rhythm".    
 
