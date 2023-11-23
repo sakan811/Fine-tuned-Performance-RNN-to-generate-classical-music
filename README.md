@@ -37,7 +37,8 @@ The only things that were successful were 2 functions that I added to the script
 This is the original pre-trained Performance RNN model that was fine-tuned more classical music dataset.     
 The model was trained for around 191,000 steps.        
  
-**Generated Music Samples:**         
+**Generated Music Samples:**  
+To listen to the sample, check out these links or the files in the folder inside this GitHub repo
 - Sample 1: https://drive.google.com/file/d/1kJpxJz9yiipzbHQDCD2Qw3GKX-TiEDHM/view?usp=sharing     
 - Sample 2: https://drive.google.com/file/d/1qJp1F-WeIYkyByrxkqjhF7ZZYR-oahDd/view?usp=sharing   
 - Sample 3: https://drive.google.com/file/d/1yoD_gwoIU5fHl2p0BgmmAqqygCqE4ISj/view?usp=sharing  
@@ -61,7 +62,8 @@ The model was trained for around 21,500 steps.
 - Adding L1 regularization to prevent overfitting even more.
 - Adding Cyclical Learning Rate to help manage learning rate.
 
-**Generated Music Samples:**         
+**Generated Music Samples:**    
+To listen to the sample, check out these links or the files in the folder inside this GitHub repo   
 - Sample 1: https://drive.google.com/file/d/17KAQ0eBqgtGidf5aJIJb0qvtZco1Do-B/view?usp=share_link           
 - Sample 2: https://drive.google.com/file/d/12ysZgJcLwxQpXaHqsHUS4H25r0VfegKp/view?usp=sharing   
 - Sample 3: https://drive.google.com/file/d/1MHW0Fk2dZrB9pAENuA4KK6NnajQyY4T7/view?usp=sharing   
@@ -107,7 +109,8 @@ The maximum LR was found during my trial-and-error experimentation to find the b
 This is the modified pre-trained Performance RNN model that was fine-tuned with a more classical music dataset.     
 The final model was trained for around 1,958 steps. 
 
-**Generated Music Samples:**         
+**Generated Music Samples:**     
+To listen to the sample, check out these links or the files in the folder inside this GitHub repo  
 - Sample 1: https://drive.google.com/file/d/1KdpRDLyrl01uPRiNUP_G-LRulnigZe6J/view?usp=sharing   
 - Sample 2: https://drive.google.com/file/d/1Dko32o5i4izazB4rJaNWpG5D3iSi6T8y/view?usp=sharing  
 - Sample 3: https://drive.google.com/file/d/12w3Q4BiFBfLa1n6RzlQBK-cFGy37nRQo/view?usp=sharing  
