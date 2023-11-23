@@ -190,11 +190,11 @@ Using CLR is faster by around 41.93% compared to using the fixed learning rate.
 - **events_rnn_graph.py**
     - **Modified the loss function**
         - Added **Rhythm Loss** and **Harmonic Tension Loss** on top of the original loss function.    
-            - To enable Rhythm Loss, use the following command line:     
+            - To enable Rhythm Loss, use the following command line as an example:     
                 ```
                 --rhythm_loss=0.5 \
                 ``` 
-            - To enable Harmonic Tension Loss, use the following command line:     
+            - To enable Harmonic Tension Loss, use the following command line as an example:     
                 ```
                 --harmony_loss=0.5 \
                 ``` 
