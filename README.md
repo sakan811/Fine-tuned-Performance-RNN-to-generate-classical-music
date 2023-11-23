@@ -21,11 +21,9 @@ The dataset will be divided into 2 datasets, training, and evaluation, with a ra
 ## Results
 All of the Performance RNN models from this project could not generate classical music with a "human-like" quality as I expected.   
 
-The only things that were successful were 2 functions that I added to the scripts: Early-stop and Cyclical Learning Rate.
-
-Early-stop helps with preventing overfitting, as the original scripts don't provide this function.   
-
-Cyclical Learning Rate helps with saving training times compared to using the traditional fixed learning rate, as stated in "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith.
+The only things that were successful were 2 functions that I added to the scripts: Early-stop and Cyclical Learning Rate.   
+- Early-stop helps with preventing overfitting, as the original scripts don't provide this function.         
+- Cyclical Learning Rate helps with saving training times compared to using the traditional fixed learning rate, as stated in "Cyclical Learning Rates for Training Neural Networks" research by Leslie N. Smith.
 
 ## Table of Contents
 - [Result of the 1st Iteration](#result-of-the-1st-iteration)
