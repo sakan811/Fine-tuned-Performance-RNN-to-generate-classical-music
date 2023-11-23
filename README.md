@@ -176,7 +176,7 @@ The graph above is an Evaluation Loss of the model using a Fixed Learning Rate
 
 It's clear that using CLR is faster than using a fixed learning rate in terms of reaching the same point.    
 
-Using CLR is faster by around 41% compared to using the fixed learning rate.   
+Using CLR is faster by around 41.93% compared to using the fixed learning rate.   
 
 ## List of Modified Files
 - **events_rnn_train.py**
